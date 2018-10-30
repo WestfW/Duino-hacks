@@ -18,3 +18,6 @@ if (delay_without_delaying(ledtime, 500)) {
 
 ## ipchecksum_test
 Improved ip checksum code (inline asm) for EtherCard and similar.
+
+## test_trng
+Demo sketch that initializes and uses the TRNG (True Random Number Generator) peripheral present on the SAMD51.
