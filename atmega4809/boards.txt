@@ -1,0 +1,61 @@
+# See: http://code.google.com/p/arduino/wiki/Platforms
+
+##############################################################
+
+uno2018.name=Arduino Uno WiFi Rev2
+
+uno2018.vid.0=0x03eb
+uno2018.pid.0=0x2145
+
+uno2018.upload.tool=avrdude
+uno2018.upload.protocol=xplainedmini_updi
+uno2018.upload.maximum_size=49152
+uno2018.upload.maximum_data_size=6144
+uno2018.upload.speed=115200
+
+uno2018.build.mcu=atmega4809
+uno2018.build.f_cpu=16000000L
+uno2018.build.board=AVR_UNO_WIFI_REV2
+uno2018.build.core=arduino
+uno2018.build.variant=uno2018
+#uno2018.build.extra_flags=-B{runtime.tools.atpack.path}/gcc/dev/{build.mcu}
+
+uno2018.bootloader.tool=avrdude
+uno2018.bootloader.SYSCFG0=0xC9
+uno2018.fuses.file=fuses_4809.bin
+
+menu.mode=Registers emulation
+uno2018.menu.mode.on=ATMEGA328
+uno2018.menu.mode.on.build.extra_flags=-DUNO_WIFI_REV2_328MODE
+uno2018.menu.mode.off=None (ATMEGA4809)
+##############################################################
+
+##############################################################
+
+xpro4809.name=Atmel Xplained 4809 Pro
+
+xpro4809.vid.0=0x03eb
+xpro4809.pid.0=0x2111
+
+xpro4809.upload.tool=avrdude
+xpro4809.upload.protocol=xplainedpro_updi
+xpro4809.upload.maximum_size=49152
+xpro4809.upload.maximum_data_size=6144
+xpro4809.upload.speed=115200
+
+xpro4809.build.mcu=atmega4809
+xpro4809.build.f_cpu=16000000L
+xpro4809.build.board=AVR_XPRO4809
+xpro4809.build.core=arduino
+xpro4809.build.variant=xpro4809
+#xpro4809.build.extra_flags=-B{runtime.tools.atpack.path}/gcc/dev/{build.mcu}
+
+xpro4809.bootloader.tool=avrdude
+xpro4809.bootloader.SYSCFG0=0xC9
+xpro4809.fuses.file=fuses_4809.bin
+
+menu.mode=Registers emulation
+xpro4809.menu.mode.on=ATMEGA328
+xpro4809.menu.mode.on.build.extra_flags=-DUNO_WIFI_REV2_328MODE
+xpro4809.menu.mode.off=None (ATMEGA4809)
+##############################################################
