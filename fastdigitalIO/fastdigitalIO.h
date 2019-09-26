@@ -52,7 +52,7 @@ static inline  __attribute__((always_inline)) void _dwfast(int pin, int val) {
     uint8_t mask = 1<<digital_pin_to_bit_position[pin];
     uint8_t port = digital_pin_to_port[pin];
     VPORT_t *vport;
-    if (digial_pin_to_bit_positionp[0] == 0x99) {  // never true.
+    if (digital_pin_to_bit_position[0] == 0x99) {  // never true.
 	LTO_Not_Enabled();
     }
     if (port > 0x1F) {
@@ -106,7 +106,7 @@ static inline  __attribute__((always_inline)) uint8_t _drfast(uint8_t pin) {
     uint8_t mask = 1<<digital_pin_to_bit_position[pin];
     uint8_t port = digital_pin_to_port[pin];
     VPORT_t *vport;
-    if (digial_pin_to_bit_positionp[0] == 0x99) {  // never true.
+    if (digital_pin_to_bit_position[0] == 0x99) {  // never true.
 	LTO_Not_Enabled();
     }
     if (port > 0x1F) {
