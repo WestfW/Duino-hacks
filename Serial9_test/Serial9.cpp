@@ -84,7 +84,7 @@ int Serial9::read()
 {
   uint8_t status = *_ucsra;
   int16_t data;
-  if (!status & (1 << RXC0))
+  if (!(status & (1 << RXC0)))
     return -1;
   data = (uint16_t)(*_ucsrb & (1 << RXB80)) << (8 - RXB80);
   data |= *_udr;
