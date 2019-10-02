@@ -8,12 +8,46 @@
 #define debug(a)
 
 /*
+ * There are potentially several counters in an ARM that count main CPU clock cycles.
+
+ * 1) There is the SysTick Timer, which is limited to 24 bits, counts
+ *    down, and is usually further limited by its use as a System Tick
+ *    Timer (resets after 1ms)
+ *
+ * 2) The Data Watchpoint and Trace unit (DWT) is an option of ARMv7m
+ *    architecture chips (CM3, CM4, etc) - if enabled, it keeps a 32
+ *    cycle up-counter.
+ *
+ * 3) If a chip has a cache controller, that may includes monitoring
+ *    hardware that may keep a cycle count.  (This is vendor
+ *    specific. For example, the SAMD51 has a CMCC->MSR.EVENT_COUNT
+ *    that can count cycles, data cache hits, or code hits.
+ *    This counter does not wrap!
+ */
+
+
+/*
  *  If out chip has the Debug Watch & Trace unit, we can use its full 32bit
  *  Cycle counter (DWT->CYCCNT) and worry less about wrapping due
  *  to Systick->load   (in theory.  Not yet implemented.)
  */
-#ifdef DWT 
+#ifdef DWT
+void delayus_dwt(uint32_t us)
+{
+  uint32_t start, elapsed;
+  uint32_t count;
 
+  if (us == 0)
+    return;
+
+  count = us * (VARIANT_MCK / 1000000) - 20;
+  start = DWT->CYCCNT;  //CYCCNT is 32bits, takes 37s or so to wrap.
+  while (1) {
+    elapsed = DWT->CYCCNT - start;
+    if (elapsed >= count)
+      return;
+  }
+}
 #endif
 
 #define GET_SYSTICK SysTick->VAL;
@@ -32,6 +66,9 @@ void sysTickDelay (uint32_t count)
 {
   uint32_t reload = SysTick->LOAD;
   int32_t start, end, now;
+
+  if (us == 0)
+    return;
 
   debug("get start >");
   start = GET_SYSTICK;
@@ -55,6 +92,9 @@ void sysTickDelay (uint32_t count)
 void sysTickDelay2 (uint32_t count)
 {
   int32_t start, elapsed, reload;
+
+  if (us == 0)
+    return;
 
   start = GET_SYSTICK;
   reload = SysTick->LOAD;
@@ -120,3 +160,23 @@ void loop() {
 #endif
   }
 }
+
+
+#ifdef CMCC
+inline void delayus_cmcc(uint32_t us)
+{
+  uint32_t count;
+
+  if (us == 0)
+    return;
+
+   // Enable Cache Monitor; defaults to Cycle Counting
+  CMCC->MEN.reg = CMCC_MEN_MENABLE;
+  CMCC->MCTRL.reg = CMCC_MCTRL_SWRST; // reset counter.
+  count = us * (VARIANT_MCK / 1000000) - 20;
+  
+  while (CMCC->MSR.reg < count) {
+    ; // spin
+  }
+}
+#endif
