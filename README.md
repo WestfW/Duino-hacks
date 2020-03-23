@@ -22,6 +22,10 @@ Improved ip checksum code (inline asm) for EtherCard and similar.
 ## test_trng
 Demo sketch that initializes and uses the TRNG (True Random Number Generator) peripheral present on the SAMD51.
 
+## DumbTXSWS
+An Arduino library that does "Software Serial" Transmit-only using Arduino core functions in a trivial way.  This requires that digitalWrite() and delayMicroseconds() be "accurate" compared to the desired bitrate of transmission, which is likely to be the case on many newer zippy ARM targets (Adafruit M4 boards, for example.)
+Tested on an Adafruit Metro M4 at up to 57600bps.  Seems to work.
+
 ## fastdigitIO
 A new method of implementing digitalWriteFast() and similar that does not need to be modified to work with different board pinouts or different AVR chips.  AVR, SAM, and SAMD versions are implemented.  The "trick" is reasonably well documented.
 

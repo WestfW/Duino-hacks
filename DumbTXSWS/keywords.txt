@@ -1,0 +1,19 @@
+#######################################
+# Syntax Coloring Map for DumbTXSWS
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+DumbTXSWS	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+end	KEYWORD2
+write	KEYWORD2
+flush	KEYWORD2
+
