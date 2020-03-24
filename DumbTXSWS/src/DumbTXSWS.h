@@ -62,7 +62,7 @@ public:
   virtual int read();
   virtual int available();
   virtual void flush();
-    virtual int peek();
+  virtual int peek();
   operator bool() { return true; }
   
   using Print::write;
