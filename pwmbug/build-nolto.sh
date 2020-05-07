@@ -1,9 +1,10 @@
-OUT=nolto
+OUT=bin-nolto
 CORE=./core
 INC="-Icore"
 GCC=/Applications/Arduino-1.8.10.app/Contents/Java/portable/packages/arduino/tools/avr-gcc/7.3.0-atmel3.6.1-arduino5/bin
 
 $GCC/avr-gcc --version
+set -x
 
 # Sketch
 $GCC/avr-g++ -c -g -Os -w -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -mmcu=atmega2560 -DF_CPU=16000000L -DARDUINO=10810 -DARDUINO_AVR_MEGA2560 -DARDUINO_ARCH_AVR $INC  test_pwm.ino.cpp -o $OUT/test_pwm.ino.cpp.o
@@ -32,4 +33,5 @@ $GCC/avr-objcopy -O ihex -R .eeprom $OUT/test_pwm.ino.elf $OUT/test_pwm.ino.hex
 
 $GCC/avr-objdump -SC  $OUT/test_pwm.ino.elf >$OUT/test_pwm.ino.lss
 
+$GCC/avr-size $OUT/test_pwm.ino.elf
 

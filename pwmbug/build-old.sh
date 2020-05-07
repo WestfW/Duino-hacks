@@ -1,9 +1,10 @@
-OUT=old
+OUT=bin-old
 CORE=./core
 INC="-Icore"
 GCC=/Applications/Arduino-1.8.9.app/Contents/Java/hardware/tools/avr/bin
 
 $GCC/avr-gcc --version
+set -x
 
 # Sketch
 $GCC/avr-g++ -c -g -Os -w -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega2560 -DF_CPU=16000000L -DARDUINO=10810 -DARDUINO_AVR_MEGA2560 -DARDUINO_ARCH_AVR $INC  test_pwm.ino.cpp -o $OUT/test_pwm.ino.cpp.o

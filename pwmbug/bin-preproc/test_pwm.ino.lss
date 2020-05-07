@@ -1,0 +1,1275 @@
+
+bin-preproc/test_pwm.ino.elf:     file format elf32-avr
+
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	f4 c0       	rjmp	.+488    	; 0x1ea <__ctors_end>
+   2:	00 00       	nop
+   4:	04 c1       	rjmp	.+520    	; 0x20e <__bad_interrupt>
+   6:	00 00       	nop
+   8:	02 c1       	rjmp	.+516    	; 0x20e <__bad_interrupt>
+   a:	00 00       	nop
+   c:	00 c1       	rjmp	.+512    	; 0x20e <__bad_interrupt>
+   e:	00 00       	nop
+  10:	fe c0       	rjmp	.+508    	; 0x20e <__bad_interrupt>
+  12:	00 00       	nop
+  14:	fc c0       	rjmp	.+504    	; 0x20e <__bad_interrupt>
+  16:	00 00       	nop
+  18:	fa c0       	rjmp	.+500    	; 0x20e <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	f8 c0       	rjmp	.+496    	; 0x20e <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	f6 c0       	rjmp	.+492    	; 0x20e <__bad_interrupt>
+  22:	00 00       	nop
+  24:	f4 c0       	rjmp	.+488    	; 0x20e <__bad_interrupt>
+  26:	00 00       	nop
+  28:	f2 c0       	rjmp	.+484    	; 0x20e <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	f0 c0       	rjmp	.+480    	; 0x20e <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	ee c0       	rjmp	.+476    	; 0x20e <__bad_interrupt>
+  32:	00 00       	nop
+  34:	ec c0       	rjmp	.+472    	; 0x20e <__bad_interrupt>
+  36:	00 00       	nop
+  38:	ea c0       	rjmp	.+468    	; 0x20e <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	e8 c0       	rjmp	.+464    	; 0x20e <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	e6 c0       	rjmp	.+460    	; 0x20e <__bad_interrupt>
+  42:	00 00       	nop
+  44:	e4 c0       	rjmp	.+456    	; 0x20e <__bad_interrupt>
+  46:	00 00       	nop
+  48:	e2 c0       	rjmp	.+452    	; 0x20e <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	e0 c0       	rjmp	.+448    	; 0x20e <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	de c0       	rjmp	.+444    	; 0x20e <__bad_interrupt>
+  52:	00 00       	nop
+  54:	dc c0       	rjmp	.+440    	; 0x20e <__bad_interrupt>
+  56:	00 00       	nop
+  58:	da c0       	rjmp	.+436    	; 0x20e <__bad_interrupt>
+  5a:	00 00       	nop
+  5c:	44 c2       	rjmp	.+1160   	; 0x4e6 <__vector_23>
+  5e:	00 00       	nop
+  60:	d6 c0       	rjmp	.+428    	; 0x20e <__bad_interrupt>
+  62:	00 00       	nop
+  64:	d4 c0       	rjmp	.+424    	; 0x20e <__bad_interrupt>
+  66:	00 00       	nop
+  68:	d2 c0       	rjmp	.+420    	; 0x20e <__bad_interrupt>
+  6a:	00 00       	nop
+  6c:	d0 c0       	rjmp	.+416    	; 0x20e <__bad_interrupt>
+  6e:	00 00       	nop
+  70:	ce c0       	rjmp	.+412    	; 0x20e <__bad_interrupt>
+  72:	00 00       	nop
+  74:	cc c0       	rjmp	.+408    	; 0x20e <__bad_interrupt>
+  76:	00 00       	nop
+  78:	ca c0       	rjmp	.+404    	; 0x20e <__bad_interrupt>
+  7a:	00 00       	nop
+  7c:	c8 c0       	rjmp	.+400    	; 0x20e <__bad_interrupt>
+  7e:	00 00       	nop
+  80:	c6 c0       	rjmp	.+396    	; 0x20e <__bad_interrupt>
+  82:	00 00       	nop
+  84:	c4 c0       	rjmp	.+392    	; 0x20e <__bad_interrupt>
+  86:	00 00       	nop
+  88:	c2 c0       	rjmp	.+388    	; 0x20e <__bad_interrupt>
+  8a:	00 00       	nop
+  8c:	c0 c0       	rjmp	.+384    	; 0x20e <__bad_interrupt>
+  8e:	00 00       	nop
+  90:	be c0       	rjmp	.+380    	; 0x20e <__bad_interrupt>
+  92:	00 00       	nop
+  94:	bc c0       	rjmp	.+376    	; 0x20e <__bad_interrupt>
+  96:	00 00       	nop
+  98:	ba c0       	rjmp	.+372    	; 0x20e <__bad_interrupt>
+  9a:	00 00       	nop
+  9c:	b8 c0       	rjmp	.+368    	; 0x20e <__bad_interrupt>
+  9e:	00 00       	nop
+  a0:	b6 c0       	rjmp	.+364    	; 0x20e <__bad_interrupt>
+  a2:	00 00       	nop
+  a4:	b4 c0       	rjmp	.+360    	; 0x20e <__bad_interrupt>
+  a6:	00 00       	nop
+  a8:	b2 c0       	rjmp	.+356    	; 0x20e <__bad_interrupt>
+  aa:	00 00       	nop
+  ac:	b0 c0       	rjmp	.+352    	; 0x20e <__bad_interrupt>
+  ae:	00 00       	nop
+  b0:	ae c0       	rjmp	.+348    	; 0x20e <__bad_interrupt>
+  b2:	00 00       	nop
+  b4:	ac c0       	rjmp	.+344    	; 0x20e <__bad_interrupt>
+  b6:	00 00       	nop
+  b8:	aa c0       	rjmp	.+340    	; 0x20e <__bad_interrupt>
+  ba:	00 00       	nop
+  bc:	a8 c0       	rjmp	.+336    	; 0x20e <__bad_interrupt>
+  be:	00 00       	nop
+  c0:	a6 c0       	rjmp	.+332    	; 0x20e <__bad_interrupt>
+  c2:	00 00       	nop
+  c4:	a4 c0       	rjmp	.+328    	; 0x20e <__bad_interrupt>
+  c6:	00 00       	nop
+  c8:	a2 c0       	rjmp	.+324    	; 0x20e <__bad_interrupt>
+  ca:	00 00       	nop
+  cc:	a0 c0       	rjmp	.+320    	; 0x20e <__bad_interrupt>
+  ce:	00 00       	nop
+  d0:	9e c0       	rjmp	.+316    	; 0x20e <__bad_interrupt>
+  d2:	00 00       	nop
+  d4:	9c c0       	rjmp	.+312    	; 0x20e <__bad_interrupt>
+  d6:	00 00       	nop
+  d8:	9a c0       	rjmp	.+308    	; 0x20e <__bad_interrupt>
+  da:	00 00       	nop
+  dc:	98 c0       	rjmp	.+304    	; 0x20e <__bad_interrupt>
+  de:	00 00       	nop
+  e0:	96 c0       	rjmp	.+300    	; 0x20e <__bad_interrupt>
+	...
+
+000000e4 <__trampolines_end>:
+  e4:	00 00       	nop
+  e6:	0a 0b       	sbc	r16, r26
+  e8:	02 09       	sbc	r16, r2
+  ea:	0c 0d       	add	r16, r12
+  ec:	0e 08       	sbc	r0, r14
+  ee:	07 03       	mulsu	r16, r23
+  f0:	04 01       	movw	r0, r8
+	...
+ 10e:	00 00       	nop
+ 110:	12 11       	cpse	r17, r2
+ 112:	10 00       	.word	0x0010	; ????
+	...
+
+0000012a <port_to_output_PGM>:
+ 12a:	00 00 22 00 25 00 28 00 2b 00 2e 00 31 00 34 00     ..".%.(.+...1.4.
+ 13a:	02 01 00 00 05 01 08 01 0b 01                       ..........
+
+00000144 <port_to_mode_PGM>:
+ 144:	00 00 21 00 24 00 27 00 2a 00 2d 00 30 00 33 00     ..!.$.'.*.-.0.3.
+ 154:	01 01 00 00 04 01 07 01 0a 01                       ..........
+
+0000015e <digital_pin_to_port_PGM>:
+ 15e:	05 05 05 05 07 05 08 08 08 08 02 02 02 02 0a 0a     ................
+ 16e:	08 08 04 04 04 04 01 01 01 01 01 01 01 01 03 03     ................
+ 17e:	03 03 03 03 03 03 04 07 07 07 0c 0c 0c 0c 0c 0c     ................
+ 18e:	0c 0c 02 02 02 02 06 06 06 06 06 06 06 06 0b 0b     ................
+ 19e:	0b 0b 0b 0b 0b 0b                                   ......
+
+000001a4 <digital_pin_to_bit_mask_PGM>:
+ 1a4:	01 02 10 20 20 08 08 10 20 40 10 20 40 80 02 01     ...  ... @. @...
+ 1b4:	02 01 08 04 02 01 01 02 04 08 10 20 40 80 80 40     ........... @..@
+ 1c4:	20 10 08 04 02 01 80 04 02 01 80 40 20 10 08 04      ..........@ ...
+ 1d4:	02 01 08 04 02 01 01 02 04 08 10 20 40 80 01 02     ........... @...
+ 1e4:	04 08 10 20 40 80                                   ... @.
+
+000001ea <__ctors_end>:
+ 1ea:	11 24       	eor	r1, r1
+ 1ec:	1f be       	out	0x3f, r1	; 63
+ 1ee:	cf ef       	ldi	r28, 0xFF	; 255
+ 1f0:	d1 e2       	ldi	r29, 0x21	; 33
+ 1f2:	de bf       	out	0x3e, r29	; 62
+ 1f4:	cd bf       	out	0x3d, r28	; 61
+ 1f6:	00 e0       	ldi	r16, 0x00	; 0
+ 1f8:	0c bf       	out	0x3c, r16	; 60
+
+000001fa <__do_clear_bss>:
+ 1fa:	22 e0       	ldi	r18, 0x02	; 2
+ 1fc:	a0 e0       	ldi	r26, 0x00	; 0
+ 1fe:	b2 e0       	ldi	r27, 0x02	; 2
+ 200:	01 c0       	rjmp	.+2      	; 0x204 <.do_clear_bss_start>
+
+00000202 <.do_clear_bss_loop>:
+ 202:	1d 92       	st	X+, r1
+
+00000204 <.do_clear_bss_start>:
+ 204:	a9 30       	cpi	r26, 0x09	; 9
+ 206:	b2 07       	cpc	r27, r18
+ 208:	e1 f7       	brne	.-8      	; 0x202 <.do_clear_bss_loop>
+ 20a:	b7 d1       	rcall	.+878    	; 0x57a <main>
+ 20c:	41 c2       	rjmp	.+1154   	; 0x690 <_exit>
+
+0000020e <__bad_interrupt>:
+ 20e:	f8 ce       	rjmp	.-528    	; 0x0 <__vectors>
+
+00000210 <pinMode.constprop.0>:
+
+void pinMode(uint8_t pin, uint8_t mode)
+{
+ uint8_t bit = ( 
+              (__extension__({ uint16_t __addr16 = (uint16_t)((uint16_t)(
+              digital_pin_to_bit_mask_PGM + (pin)
+ 210:	90 e0       	ldi	r25, 0x00	; 0
+ 212:	fc 01       	movw	r30, r24
+ 214:	ec 55       	subi	r30, 0x5C	; 92
+ 216:	fe 4f       	sbci	r31, 0xFE	; 254
+              )); uint8_t __result; __asm__ __volatile__ ( "lpm %0, Z" "\n\t" : "=r" (__result) : "z" (__addr16) ); __result; })) 
+ 218:	24 91       	lpm	r18, Z
+              );
+ uint8_t port = ( 
+               (__extension__({ uint16_t __addr16 = (uint16_t)((uint16_t)(
+               digital_pin_to_port_PGM + (pin)
+ 21a:	82 5a       	subi	r24, 0xA2	; 162
+ 21c:	9e 4f       	sbci	r25, 0xFE	; 254
+               )); uint8_t __result; __asm__ __volatile__ ( "lpm %0, Z" "\n\t" : "=r" (__result) : "z" (__addr16) ); __result; })) 
+ 21e:	fc 01       	movw	r30, r24
+ 220:	84 91       	lpm	r24, Z
+               );
+ volatile uint8_t *reg, *out;
+
+ if (port == 0) return;
+ 222:	88 23       	and	r24, r24
+ 224:	99 f0       	breq	.+38     	; 0x24c <pinMode.constprop.0+0x3c>
+
+
+ reg = ( (volatile uint8_t *)( 
+      (__extension__({ uint16_t __addr16 = (uint16_t)((uint16_t)(
+      port_to_mode_PGM + (port)
+ 226:	90 e0       	ldi	r25, 0x00	; 0
+ 228:	88 0f       	add	r24, r24
+ 22a:	99 1f       	adc	r25, r25
+ 22c:	fc 01       	movw	r30, r24
+ 22e:	ec 5b       	subi	r30, 0xBC	; 188
+ 230:	fe 4f       	sbci	r31, 0xFE	; 254
+      )); uint16_t __result; __asm__ __volatile__ ( "lpm %A0, Z+" "\n\t" "lpm %B0, Z" "\n\t" : "=r" (__result), "=z" (__addr16) : "1" (__addr16) ); __result; }))
+ 232:	a5 91       	lpm	r26, Z+
+ 234:	b4 91       	lpm	r27, Z
+      ) );
+ out = ( (volatile uint8_t *)( 
+      (__extension__({ uint16_t __addr16 = (uint16_t)((uint16_t)(
+      port_to_output_PGM + (port)
+ 236:	fc 01       	movw	r30, r24
+ 238:	e6 5d       	subi	r30, 0xD6	; 214
+ 23a:	fe 4f       	sbci	r31, 0xFE	; 254
+      )); uint16_t __result; __asm__ __volatile__ ( "lpm %A0, Z+" "\n\t" "lpm %B0, Z" "\n\t" : "=r" (__result), "=z" (__addr16) : "1" (__addr16) ); __result; }))
+ 23c:	85 91       	lpm	r24, Z+
+ 23e:	94 91       	lpm	r25, Z
+  *out |= bit;
+  
+ (*(volatile uint8_t *)((0x3F) + 0x20)) 
+      = oldSREG;
+ } else {
+  uint8_t oldSREG = 
+ 240:	8f b7       	in	r24, 0x3f	; 63
+                   (*(volatile uint8_t *)((0x3F) + 0x20))
+                       ;
+                
+               __asm__ __volatile__ ("cli" ::: "memory")
+ 242:	f8 94       	cli
+                    ;
+  *reg |= bit;
+ 244:	ec 91       	ld	r30, X
+ 246:	e2 2b       	or	r30, r18
+ 248:	ec 93       	st	X, r30
+  
+ (*(volatile uint8_t *)((0x3F) + 0x20)) 
+      = oldSREG;
+ 24a:	8f bf       	out	0x3f, r24	; 63
+ }
+}
+ 24c:	08 95       	ret
+
+0000024e <digitalWrite>:
+void digitalWrite(uint8_t pin, uint8_t val)
+{
+
+ uint8_t timer = ( 
+                (__extension__({ uint16_t __addr16 = (uint16_t)((uint16_t)(
+                digital_pin_to_timer_PGM + (pin)
+ 24e:	28 2f       	mov	r18, r24
+ 250:	30 e0       	ldi	r19, 0x00	; 0
+ 252:	f9 01       	movw	r30, r18
+ 254:	ec 51       	subi	r30, 0x1C	; 28
+ 256:	ff 4f       	sbci	r31, 0xFF	; 255
+                )); uint8_t __result; __asm__ __volatile__ ( "lpm %0, Z" "\n\t" : "=r" (__result) : "z" (__addr16) ); __result; })) 
+ 258:	94 91       	lpm	r25, Z
+                );
+ uint8_t bit = ( 
+              (__extension__({ uint16_t __addr16 = (uint16_t)((uint16_t)(
+              digital_pin_to_bit_mask_PGM + (pin)
+ 25a:	f9 01       	movw	r30, r18
+ 25c:	ec 55       	subi	r30, 0x5C	; 92
+ 25e:	fe 4f       	sbci	r31, 0xFE	; 254
+              )); uint8_t __result; __asm__ __volatile__ ( "lpm %0, Z" "\n\t" : "=r" (__result) : "z" (__addr16) ); __result; })) 
+ 260:	44 91       	lpm	r20, Z
+              );
+ uint8_t port = ( 
+               (__extension__({ uint16_t __addr16 = (uint16_t)((uint16_t)(
+               digital_pin_to_port_PGM + (pin)
+ 262:	22 5a       	subi	r18, 0xA2	; 162
+ 264:	3e 4f       	sbci	r19, 0xFE	; 254
+               )); uint8_t __result; __asm__ __volatile__ ( "lpm %0, Z" "\n\t" : "=r" (__result) : "z" (__addr16) ); __result; })) 
+ 266:	f9 01       	movw	r30, r18
+ 268:	24 91       	lpm	r18, Z
+               );
+ volatile uint8_t *out;
+
+ if (port == 0) return;
+ 26a:	22 23       	and	r18, r18
+ 26c:	09 f4       	brne	.+2      	; 0x270 <digitalWrite+0x22>
+ 26e:	34 c0       	rjmp	.+104    	; 0x2d8 <digitalWrite+0x8a>
+
+
+
+ if (timer != 0) turnOffPWM(timer);
+ 270:	99 23       	and	r25, r25
+ 272:	09 f1       	breq	.+66     	; 0x2b6 <digitalWrite+0x68>
+ }
+}
+static void turnOffPWM(uint8_t timer)
+{
+
+ switch (timer)
+ 274:	91 50       	subi	r25, 0x01	; 1
+ 276:	92 31       	cpi	r25, 0x12	; 18
+ 278:	f0 f4       	brcc	.+60     	; 0x2b6 <digitalWrite+0x68>
+ 27a:	e9 2f       	mov	r30, r25
+ 27c:	f0 e0       	ldi	r31, 0x00	; 0
+ 27e:	88 27       	eor	r24, r24
+ 280:	ec 5b       	subi	r30, 0xBC	; 188
+ 282:	fe 4f       	sbci	r31, 0xFE	; 254
+ 284:	8f 4f       	sbci	r24, 0xFF	; 255
+ 286:	fc c1       	rjmp	.+1016   	; 0x680 <__tablejump2__>
+ 288:	75 01       	movw	r14, r10
+ 28a:	79 01       	movw	r14, r18
+ 28c:	56 01       	movw	r10, r12
+ 28e:	6d 01       	movw	r12, r26
+ 290:	71 01       	movw	r14, r2
+ 292:	5b 01       	movw	r10, r22
+ 294:	7c 01       	movw	r14, r24
+ 296:	82 01       	movw	r16, r4
+ 298:	86 01       	movw	r16, r12
+ 29a:	8c 01       	movw	r16, r24
+ 29c:	90 01       	movw	r18, r0
+ 29e:	94 01       	movw	r18, r8
+ 2a0:	9a 01       	movw	r18, r20
+ 2a2:	9e 01       	movw	r18, r28
+ 2a4:	5b 01       	movw	r10, r22
+ 2a6:	a2 01       	movw	r20, r4
+ 2a8:	a8 01       	movw	r20, r16
+ 2aa:	ac 01       	movw	r20, r24
+ {
+
+  case 3: (
+                 (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x80)))))) 
+                 &= ~
+ 2ac:	80 91 80 00 	lds	r24, 0x0080	; 0x800080 <__TEXT_REGION_LENGTH__+0x700080>
+ 2b0:	8f 77       	andi	r24, 0x7F	; 127
+                 ); break;
+
+
+  case 5: (
+                 (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x80)))))) 
+                 &= ~
+ 2b2:	80 93 80 00 	sts	0x0080, r24	; 0x800080 <__TEXT_REGION_LENGTH__+0x700080>
+
+ if (timer != 0) turnOffPWM(timer);
+
+ out = ( (volatile uint8_t *)( 
+      (__extension__({ uint16_t __addr16 = (uint16_t)((uint16_t)(
+      port_to_output_PGM + (port)
+ 2b6:	e2 2f       	mov	r30, r18
+ 2b8:	f0 e0       	ldi	r31, 0x00	; 0
+ 2ba:	ee 0f       	add	r30, r30
+ 2bc:	ff 1f       	adc	r31, r31
+ 2be:	e6 5d       	subi	r30, 0xD6	; 214
+ 2c0:	fe 4f       	sbci	r31, 0xFE	; 254
+      )); uint16_t __result; __asm__ __volatile__ ( "lpm %A0, Z+" "\n\t" "lpm %B0, Z" "\n\t" : "=r" (__result), "=z" (__addr16) : "1" (__addr16) ); __result; }))
+ 2c2:	a5 91       	lpm	r26, Z+
+ 2c4:	b4 91       	lpm	r27, Z
+      ) );
+
+ uint8_t oldSREG = 
+ 2c6:	8f b7       	in	r24, 0x3f	; 63
+                  (*(volatile uint8_t *)((0x3F) + 0x20))
+                      ;
+ 
+__asm__ __volatile__ ("cli" ::: "memory")
+ 2c8:	f8 94       	cli
+     ;
+
+ if (val == 0x0) {
+  *out &= ~bit;
+ 2ca:	ec 91       	ld	r30, X
+                      ;
+ 
+__asm__ __volatile__ ("cli" ::: "memory")
+     ;
+
+ if (val == 0x0) {
+ 2cc:	61 11       	cpse	r22, r1
+ 2ce:	48 c0       	rjmp	.+144    	; 0x360 <digitalWrite+0x112>
+  *out &= ~bit;
+ 2d0:	40 95       	com	r20
+ 2d2:	4e 23       	and	r20, r30
+ } else {
+  *out |= bit;
+ 2d4:	4c 93       	st	X, r20
+ }
+
+ 
+(*(volatile uint8_t *)((0x3F) + 0x20)) 
+     = oldSREG;
+ 2d6:	8f bf       	out	0x3f, r24	; 63
+
+}
+ 2d8:	08 95       	ret
+                 ); break;
+
+
+  case 4: (
+                 (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x80)))))) 
+                 &= ~
+ 2da:	80 91 80 00 	lds	r24, 0x0080	; 0x800080 <__TEXT_REGION_LENGTH__+0x700080>
+ 2de:	8f 7d       	andi	r24, 0xDF	; 223
+ 2e0:	e8 cf       	rjmp	.-48     	; 0x2b2 <digitalWrite+0x64>
+                 ); break;
+
+
+  case 5: (
+                 (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x80)))))) 
+                 &= ~
+ 2e2:	80 91 80 00 	lds	r24, 0x0080	; 0x800080 <__TEXT_REGION_LENGTH__+0x700080>
+ 2e6:	87 7f       	andi	r24, 0xF7	; 247
+ 2e8:	e4 cf       	rjmp	.-56     	; 0x2b2 <digitalWrite+0x64>
+
+
+
+  case 1: (
+                 (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)((0x24) + 0x20)))))) 
+                 &= ~
+ 2ea:	84 b5       	in	r24, 0x24	; 36
+ 2ec:	8f 77       	andi	r24, 0x7F	; 127
+
+
+
+  case 2: (
+                 (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)((0x24) + 0x20)))))) 
+                 &= ~
+ 2ee:	84 bd       	out	0x24, r24	; 36
+ 2f0:	e2 cf       	rjmp	.-60     	; 0x2b6 <digitalWrite+0x68>
+ 2f2:	84 b5       	in	r24, 0x24	; 36
+ 2f4:	8f 7d       	andi	r24, 0xDF	; 223
+ 2f6:	fb cf       	rjmp	.-10     	; 0x2ee <digitalWrite+0xa0>
+                 ); break;
+
+
+  case 7: (
+                 (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0xB0)))))) 
+                 &= ~
+ 2f8:	80 91 b0 00 	lds	r24, 0x00B0	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7000b0>
+ 2fc:	8f 77       	andi	r24, 0x7F	; 127
+                 ); break;
+
+
+  case 8: (
+                 (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0xB0)))))) 
+                 &= ~
+ 2fe:	80 93 b0 00 	sts	0x00B0, r24	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7000b0>
+ 302:	d9 cf       	rjmp	.-78     	; 0x2b6 <digitalWrite+0x68>
+ 304:	80 91 b0 00 	lds	r24, 0x00B0	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7000b0>
+ 308:	8f 7d       	andi	r24, 0xDF	; 223
+ 30a:	f9 cf       	rjmp	.-14     	; 0x2fe <digitalWrite+0xb0>
+
+
+
+  case 9: (
+                 (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x90)))))) 
+                 &= ~
+ 30c:	80 91 90 00 	lds	r24, 0x0090	; 0x800090 <__TEXT_REGION_LENGTH__+0x700090>
+ 310:	8f 77       	andi	r24, 0x7F	; 127
+                 ); break;
+
+
+  case 11: (
+                 (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x90)))))) 
+                 &= ~
+ 312:	80 93 90 00 	sts	0x0090, r24	; 0x800090 <__TEXT_REGION_LENGTH__+0x700090>
+ 316:	cf cf       	rjmp	.-98     	; 0x2b6 <digitalWrite+0x68>
+                 ); break;
+
+
+  case 10: (
+                 (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x90)))))) 
+                 &= ~
+ 318:	80 91 90 00 	lds	r24, 0x0090	; 0x800090 <__TEXT_REGION_LENGTH__+0x700090>
+ 31c:	8f 7d       	andi	r24, 0xDF	; 223
+ 31e:	f9 cf       	rjmp	.-14     	; 0x312 <digitalWrite+0xc4>
+                 ); break;
+
+
+  case 11: (
+                 (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x90)))))) 
+                 &= ~
+ 320:	80 91 90 00 	lds	r24, 0x0090	; 0x800090 <__TEXT_REGION_LENGTH__+0x700090>
+ 324:	87 7f       	andi	r24, 0xF7	; 247
+ 326:	f5 cf       	rjmp	.-22     	; 0x312 <digitalWrite+0xc4>
+
+
+
+  case 12: (
+                 (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0xA0)))))) 
+                 &= ~
+ 328:	80 91 a0 00 	lds	r24, 0x00A0	; 0x8000a0 <__TEXT_REGION_LENGTH__+0x7000a0>
+ 32c:	8f 77       	andi	r24, 0x7F	; 127
+                 ); break;
+
+
+  case 14: (
+                 (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0xA0)))))) 
+                 &= ~
+ 32e:	80 93 a0 00 	sts	0x00A0, r24	; 0x8000a0 <__TEXT_REGION_LENGTH__+0x7000a0>
+ 332:	c1 cf       	rjmp	.-126    	; 0x2b6 <digitalWrite+0x68>
+                 ); break;
+
+
+  case 13: (
+                 (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0xA0)))))) 
+                 &= ~
+ 334:	80 91 a0 00 	lds	r24, 0x00A0	; 0x8000a0 <__TEXT_REGION_LENGTH__+0x7000a0>
+ 338:	8f 7d       	andi	r24, 0xDF	; 223
+ 33a:	f9 cf       	rjmp	.-14     	; 0x32e <digitalWrite+0xe0>
+                 ); break;
+
+
+  case 14: (
+                 (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0xA0)))))) 
+                 &= ~
+ 33c:	80 91 a0 00 	lds	r24, 0x00A0	; 0x8000a0 <__TEXT_REGION_LENGTH__+0x7000a0>
+ 340:	87 7f       	andi	r24, 0xF7	; 247
+ 342:	f5 cf       	rjmp	.-22     	; 0x32e <digitalWrite+0xe0>
+
+
+
+  case 16: (
+                 (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x120)))))) 
+                 &= ~
+ 344:	80 91 20 01 	lds	r24, 0x0120	; 0x800120 <__TEXT_REGION_LENGTH__+0x700120>
+ 348:	8f 77       	andi	r24, 0x7F	; 127
+                 &= ~
+                 (1 << (5))
+                 ); break;
+  case 18: (
+                 (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x120)))))) 
+                 &= ~
+ 34a:	80 93 20 01 	sts	0x0120, r24	; 0x800120 <__TEXT_REGION_LENGTH__+0x700120>
+ 34e:	b3 cf       	rjmp	.-154    	; 0x2b6 <digitalWrite+0x68>
+                 &= ~
+                 (1 << (7))
+                 ); break;
+  case 17: (
+                 (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x120)))))) 
+                 &= ~
+ 350:	80 91 20 01 	lds	r24, 0x0120	; 0x800120 <__TEXT_REGION_LENGTH__+0x700120>
+ 354:	8f 7d       	andi	r24, 0xDF	; 223
+ 356:	f9 cf       	rjmp	.-14     	; 0x34a <digitalWrite+0xfc>
+                 (1 << (5))
+                 ); break;
+  case 18: (
+                 (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x120)))))) 
+                 &= ~
+ 358:	80 91 20 01 	lds	r24, 0x0120	; 0x800120 <__TEXT_REGION_LENGTH__+0x700120>
+ 35c:	87 7f       	andi	r24, 0xF7	; 247
+ 35e:	f5 cf       	rjmp	.-22     	; 0x34a <digitalWrite+0xfc>
+     ;
+
+ if (val == 0x0) {
+  *out &= ~bit;
+ } else {
+  *out |= bit;
+ 360:	4e 2b       	or	r20, r30
+ 362:	b8 cf       	rjmp	.-144    	; 0x2d4 <digitalWrite+0x86>
+
+00000364 <analogWrite.part.0>:
+
+
+
+
+
+void analogWrite(uint8_t pin, int val)
+ 364:	98 2f       	mov	r25, r24
+ }
+ else
+ {
+  switch(( 
+        (__extension__({ uint16_t __addr16 = (uint16_t)((uint16_t)(
+        digital_pin_to_timer_PGM + (pin)
+ 366:	e8 2f       	mov	r30, r24
+ 368:	f0 e0       	ldi	r31, 0x00	; 0
+ 36a:	ec 51       	subi	r30, 0x1C	; 28
+ 36c:	ff 4f       	sbci	r31, 0xFF	; 255
+        )); uint8_t __result; __asm__ __volatile__ ( "lpm %0, Z" "\n\t" : "=r" (__result) : "z" (__addr16) ); __result; })) 
+ 36e:	e4 91       	lpm	r30, Z
+ {
+  digitalWrite(pin, 0x1);
+ }
+ else
+ {
+  switch(( 
+ 370:	e1 50       	subi	r30, 0x01	; 1
+ 372:	e2 31       	cpi	r30, 0x12	; 18
+ 374:	08 f0       	brcs	.+2      	; 0x378 <analogWrite.part.0+0x14>
+ 376:	af c0       	rjmp	.+350    	; 0x4d6 <__LOCK_REGION_LENGTH__+0xd6>
+ 378:	f0 e0       	ldi	r31, 0x00	; 0
+ 37a:	88 27       	eor	r24, r24
+ 37c:	ef 53       	subi	r30, 0x3F	; 63
+ 37e:	fe 4f       	sbci	r31, 0xFE	; 254
+ 380:	8f 4f       	sbci	r24, 0xFF	; 255
+ 382:	7e c1       	rjmp	.+764    	; 0x680 <__tablejump2__>
+ 384:	d4 01       	movw	r26, r8
+ 386:	d9 01       	movw	r26, r18
+ 388:	de 01       	movw	r26, r28
+ 38a:	e8 01       	movw	r28, r16
+ 38c:	f2 01       	movw	r30, r4
+ 38e:	6b 02       	muls	r22, r27
+ 390:	fc 01       	movw	r30, r24
+ 392:	04 02       	muls	r16, r20
+ 394:	0c 02       	muls	r16, r28
+ 396:	16 02       	muls	r17, r22
+ 398:	20 02       	muls	r18, r16
+ 39a:	2a 02       	muls	r18, r26
+ 39c:	39 02       	muls	r19, r25
+ 39e:	43 02       	muls	r20, r19
+ 3a0:	6b 02       	muls	r22, r27
+ 3a2:	4d 02       	muls	r20, r29
+ 3a4:	57 02       	muls	r21, r23
+  {
+   case 1:
+
+    (
+   (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)((0x24) + 0x20)))))) 
+   |= 
+ 3a6:	61 02       	muls	r22, r17
+ 3a8:	84 b5       	in	r24, 0x24	; 36
+ 3aa:	80 68       	ori	r24, 0x80	; 128
+   (1 << (7))
+   );
+    
+   (*(volatile uint8_t *)((0X27) + 0x20)) 
+         = val;
+ 3ac:	84 bd       	out	0x24, r24	; 36
+ 3ae:	67 bd       	out	0x27, r22	; 39
+
+   case 2:
+
+    (
+   (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)((0x24) + 0x20)))))) 
+   |= 
+ 3b0:	08 95       	ret
+ 3b2:	84 b5       	in	r24, 0x24	; 36
+ 3b4:	80 62       	ori	r24, 0x20	; 32
+   (1 << (5))
+   );
+    
+   (*(volatile uint8_t *)((0X28) + 0x20)) 
+         = val;
+ 3b6:	84 bd       	out	0x24, r24	; 36
+ 3b8:	68 bd       	out	0x28, r22	; 40
+
+   case 3:
+
+    (
+   (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x80)))))) 
+   |= 
+ 3ba:	08 95       	ret
+ 3bc:	80 91 80 00 	lds	r24, 0x0080	; 0x800080 <__TEXT_REGION_LENGTH__+0x700080>
+ 3c0:	80 68       	ori	r24, 0x80	; 128
+ 3c2:	80 93 80 00 	sts	0x0080, r24	; 0x800080 <__TEXT_REGION_LENGTH__+0x700080>
+   (1 << (7))
+   );
+    
+   (*(volatile uint16_t *)(0x88)) 
+         = val;
+ 3c6:	70 93 89 00 	sts	0x0089, r23	; 0x800089 <__TEXT_REGION_LENGTH__+0x700089>
+ 3ca:	60 93 88 00 	sts	0x0088, r22	; 0x800088 <__TEXT_REGION_LENGTH__+0x700088>
+
+   case 4:
+
+    (
+   (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x80)))))) 
+   |= 
+ 3ce:	08 95       	ret
+ 3d0:	80 91 80 00 	lds	r24, 0x0080	; 0x800080 <__TEXT_REGION_LENGTH__+0x700080>
+ 3d4:	80 62       	ori	r24, 0x20	; 32
+ 3d6:	80 93 80 00 	sts	0x0080, r24	; 0x800080 <__TEXT_REGION_LENGTH__+0x700080>
+   (1 << (5))
+   );
+    
+   (*(volatile uint16_t *)(0x8A)) 
+         = val;
+ 3da:	70 93 8b 00 	sts	0x008B, r23	; 0x80008b <__TEXT_REGION_LENGTH__+0x70008b>
+ 3de:	60 93 8a 00 	sts	0x008A, r22	; 0x80008a <__TEXT_REGION_LENGTH__+0x70008a>
+
+   case 5:
+
+    (
+   (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x80)))))) 
+   |= 
+ 3e2:	08 95       	ret
+ 3e4:	80 91 80 00 	lds	r24, 0x0080	; 0x800080 <__TEXT_REGION_LENGTH__+0x700080>
+ 3e8:	88 60       	ori	r24, 0x08	; 8
+ 3ea:	80 93 80 00 	sts	0x0080, r24	; 0x800080 <__TEXT_REGION_LENGTH__+0x700080>
+   (1 << (3))
+   );
+    
+   (*(volatile uint16_t *)(0x8C)) 
+         = val;
+ 3ee:	70 93 8d 00 	sts	0x008D, r23	; 0x80008d <__TEXT_REGION_LENGTH__+0x70008d>
+ 3f2:	60 93 8c 00 	sts	0x008C, r22	; 0x80008c <__TEXT_REGION_LENGTH__+0x70008c>
+    break;
+   case 7:
+
+    (
+   (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0xB0)))))) 
+   |= 
+ 3f6:	08 95       	ret
+ 3f8:	80 91 b0 00 	lds	r24, 0x00B0	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7000b0>
+ 3fc:	80 68       	ori	r24, 0x80	; 128
+ 3fe:	80 93 b0 00 	sts	0x00B0, r24	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7000b0>
+   (1 << (7))
+   );
+    
+   (*(volatile uint8_t *)(0xB3)) 
+         = val;
+ 402:	60 93 b3 00 	sts	0x00B3, r22	; 0x8000b3 <__TEXT_REGION_LENGTH__+0x7000b3>
+
+   case 8:
+
+    (
+   (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0xB0)))))) 
+   |= 
+ 406:	08 95       	ret
+ 408:	80 91 b0 00 	lds	r24, 0x00B0	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7000b0>
+ 40c:	80 62       	ori	r24, 0x20	; 32
+ 40e:	80 93 b0 00 	sts	0x00B0, r24	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7000b0>
+   (1 << (5))
+   );
+    
+   (*(volatile uint8_t *)(0xB4)) 
+         = val;
+ 412:	60 93 b4 00 	sts	0x00B4, r22	; 0x8000b4 <__TEXT_REGION_LENGTH__+0x7000b4>
+
+   case 9:
+
+    (
+   (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x90)))))) 
+   |= 
+ 416:	08 95       	ret
+ 418:	80 91 90 00 	lds	r24, 0x0090	; 0x800090 <__TEXT_REGION_LENGTH__+0x700090>
+ 41c:	80 68       	ori	r24, 0x80	; 128
+ 41e:	80 93 90 00 	sts	0x0090, r24	; 0x800090 <__TEXT_REGION_LENGTH__+0x700090>
+   (1 << (7))
+   );
+    
+   (*(volatile uint16_t *)(0x98)) 
+         = val;
+ 422:	70 93 99 00 	sts	0x0099, r23	; 0x800099 <__TEXT_REGION_LENGTH__+0x700099>
+ 426:	60 93 98 00 	sts	0x0098, r22	; 0x800098 <__TEXT_REGION_LENGTH__+0x700098>
+
+   case 10:
+
+    (
+   (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x90)))))) 
+   |= 
+ 42a:	08 95       	ret
+ 42c:	80 91 90 00 	lds	r24, 0x0090	; 0x800090 <__TEXT_REGION_LENGTH__+0x700090>
+ 430:	80 62       	ori	r24, 0x20	; 32
+ 432:	80 93 90 00 	sts	0x0090, r24	; 0x800090 <__TEXT_REGION_LENGTH__+0x700090>
+   (1 << (5))
+   );
+    
+   (*(volatile uint16_t *)(0x9A)) 
+         = val;
+ 436:	70 93 9b 00 	sts	0x009B, r23	; 0x80009b <__TEXT_REGION_LENGTH__+0x70009b>
+ 43a:	60 93 9a 00 	sts	0x009A, r22	; 0x80009a <__TEXT_REGION_LENGTH__+0x70009a>
+
+   case 11:
+
+    (
+   (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x90)))))) 
+   |= 
+ 43e:	08 95       	ret
+ 440:	80 91 90 00 	lds	r24, 0x0090	; 0x800090 <__TEXT_REGION_LENGTH__+0x700090>
+ 444:	88 60       	ori	r24, 0x08	; 8
+ 446:	80 93 90 00 	sts	0x0090, r24	; 0x800090 <__TEXT_REGION_LENGTH__+0x700090>
+   (1 << (3))
+   );
+    
+   (*(volatile uint16_t *)(0x9C)) 
+         = val;
+ 44a:	70 93 9d 00 	sts	0x009D, r23	; 0x80009d <__TEXT_REGION_LENGTH__+0x70009d>
+ 44e:	60 93 9c 00 	sts	0x009C, r22	; 0x80009c <__TEXT_REGION_LENGTH__+0x70009c>
+
+   case 12:
+
+    (
+   (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0xA0)))))) 
+   |= 
+ 452:	08 95       	ret
+ 454:	80 91 a0 00 	lds	r24, 0x00A0	; 0x8000a0 <__TEXT_REGION_LENGTH__+0x7000a0>
+ 458:	80 68       	ori	r24, 0x80	; 128
+ 45a:	80 93 a0 00 	sts	0x00A0, r24	; 0x8000a0 <__TEXT_REGION_LENGTH__+0x7000a0>
+   (1 << (7))
+   );
+
+    (
+   (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0xA0)))))) 
+   &= ~
+ 45e:	80 91 a0 00 	lds	r24, 0x00A0	; 0x8000a0 <__TEXT_REGION_LENGTH__+0x7000a0>
+ 462:	8f 7b       	andi	r24, 0xBF	; 191
+ 464:	80 93 a0 00 	sts	0x00A0, r24	; 0x8000a0 <__TEXT_REGION_LENGTH__+0x7000a0>
+   (1 << (6))
+   );
+
+    
+   (*(volatile uint16_t *)(0xA8)) 
+         = val;
+ 468:	70 93 a9 00 	sts	0x00A9, r23	; 0x8000a9 <__TEXT_REGION_LENGTH__+0x7000a9>
+ 46c:	60 93 a8 00 	sts	0x00A8, r22	; 0x8000a8 <__TEXT_REGION_LENGTH__+0x7000a8>
+
+   case 13:
+
+    (
+   (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0xA0)))))) 
+   |= 
+ 470:	08 95       	ret
+ 472:	80 91 a0 00 	lds	r24, 0x00A0	; 0x8000a0 <__TEXT_REGION_LENGTH__+0x7000a0>
+ 476:	80 62       	ori	r24, 0x20	; 32
+ 478:	80 93 a0 00 	sts	0x00A0, r24	; 0x8000a0 <__TEXT_REGION_LENGTH__+0x7000a0>
+   (1 << (5))
+   );
+    
+   (*(volatile uint16_t *)(0xAA)) 
+         = val;
+ 47c:	70 93 ab 00 	sts	0x00AB, r23	; 0x8000ab <__TEXT_REGION_LENGTH__+0x7000ab>
+ 480:	60 93 aa 00 	sts	0x00AA, r22	; 0x8000aa <__TEXT_REGION_LENGTH__+0x7000aa>
+
+   case 14:
+
+    (
+   (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0xA0)))))) 
+   |= 
+ 484:	08 95       	ret
+ 486:	80 91 a0 00 	lds	r24, 0x00A0	; 0x8000a0 <__TEXT_REGION_LENGTH__+0x7000a0>
+ 48a:	88 60       	ori	r24, 0x08	; 8
+ 48c:	80 93 a0 00 	sts	0x00A0, r24	; 0x8000a0 <__TEXT_REGION_LENGTH__+0x7000a0>
+   (1 << (3))
+   );
+    
+   (*(volatile uint16_t *)(0xAC)) 
+         = val;
+ 490:	70 93 ad 00 	sts	0x00AD, r23	; 0x8000ad <__TEXT_REGION_LENGTH__+0x7000ad>
+ 494:	60 93 ac 00 	sts	0x00AC, r22	; 0x8000ac <__TEXT_REGION_LENGTH__+0x7000ac>
+    break;
+   case 16:
+
+    (
+   (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x120)))))) 
+   |= 
+ 498:	08 95       	ret
+ 49a:	80 91 20 01 	lds	r24, 0x0120	; 0x800120 <__TEXT_REGION_LENGTH__+0x700120>
+ 49e:	80 68       	ori	r24, 0x80	; 128
+ 4a0:	80 93 20 01 	sts	0x0120, r24	; 0x800120 <__TEXT_REGION_LENGTH__+0x700120>
+   (1 << (7))
+   );
+    
+   (*(volatile uint16_t *)(0x128)) 
+         = val;
+ 4a4:	70 93 29 01 	sts	0x0129, r23	; 0x800129 <__TEXT_REGION_LENGTH__+0x700129>
+ 4a8:	60 93 28 01 	sts	0x0128, r22	; 0x800128 <__TEXT_REGION_LENGTH__+0x700128>
+
+   case 17:
+
+    (
+   (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x120)))))) 
+   |= 
+ 4ac:	08 95       	ret
+ 4ae:	80 91 20 01 	lds	r24, 0x0120	; 0x800120 <__TEXT_REGION_LENGTH__+0x700120>
+ 4b2:	80 62       	ori	r24, 0x20	; 32
+ 4b4:	80 93 20 01 	sts	0x0120, r24	; 0x800120 <__TEXT_REGION_LENGTH__+0x700120>
+   (1 << (5))
+   );
+    
+   (*(volatile uint16_t *)(0x12A)) 
+         = val;
+ 4b8:	70 93 2b 01 	sts	0x012B, r23	; 0x80012b <__TEXT_REGION_LENGTH__+0x70012b>
+ 4bc:	60 93 2a 01 	sts	0x012A, r22	; 0x80012a <__TEXT_REGION_LENGTH__+0x70012a>
+
+   case 18:
+
+    (
+   (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x120)))))) 
+   |= 
+ 4c0:	08 95       	ret
+ 4c2:	80 91 20 01 	lds	r24, 0x0120	; 0x800120 <__TEXT_REGION_LENGTH__+0x700120>
+ 4c6:	88 60       	ori	r24, 0x08	; 8
+ 4c8:	80 93 20 01 	sts	0x0120, r24	; 0x800120 <__TEXT_REGION_LENGTH__+0x700120>
+   (1 << (3))
+   );
+    
+   (*(volatile uint16_t *)(0x12C)) 
+         = val;
+ 4cc:	70 93 2d 01 	sts	0x012D, r23	; 0x80012d <__TEXT_REGION_LENGTH__+0x70012d>
+ 4d0:	60 93 2c 01 	sts	0x012C, r22	; 0x80012c <__TEXT_REGION_LENGTH__+0x70012c>
+    break;
+
+
+   case 0:
+   default:
+    if (val < 128) {
+ 4d4:	08 95       	ret
+ 4d6:	60 38       	cpi	r22, 0x80	; 128
+ 4d8:	71 05       	cpc	r23, r1
+     digitalWrite(pin, 0x0);
+ 4da:	1c f4       	brge	.+6      	; 0x4e2 <__LOCK_REGION_LENGTH__+0xe2>
+    } else {
+     digitalWrite(pin, 0x1);
+ 4dc:	60 e0       	ldi	r22, 0x00	; 0
+ 4de:	89 2f       	mov	r24, r25
+ 4e0:	b6 ce       	rjmp	.-660    	; 0x24e <digitalWrite>
+ 4e2:	61 e0       	ldi	r22, 0x01	; 1
+
+
+void __vector_23 (void) __attribute__ ((signal,used, externally_visible)) ; void __vector_23 (void)
+
+
+{
+ 4e4:	fc cf       	rjmp	.-8      	; 0x4de <__LOCK_REGION_LENGTH__+0xde>
+
+000004e6 <__vector_23>:
+ 4e6:	1f 92       	push	r1
+ 4e8:	0f 92       	push	r0
+ 4ea:	0f b6       	in	r0, 0x3f	; 63
+ 4ec:	0f 92       	push	r0
+ 4ee:	11 24       	eor	r1, r1
+ 4f0:	2f 93       	push	r18
+ 4f2:	3f 93       	push	r19
+ 4f4:	8f 93       	push	r24
+ 4f6:	9f 93       	push	r25
+ 4f8:	af 93       	push	r26
+
+
+ unsigned long m = timer0_millis;
+ 4fa:	bf 93       	push	r27
+ 4fc:	80 91 05 02 	lds	r24, 0x0205	; 0x800205 <timer0_millis>
+ 500:	90 91 06 02 	lds	r25, 0x0206	; 0x800206 <timer0_millis+0x1>
+ 504:	a0 91 07 02 	lds	r26, 0x0207	; 0x800207 <timer0_millis+0x2>
+ 508:	b0 91 08 02 	lds	r27, 0x0208	; 0x800208 <timer0_millis+0x3>
+ unsigned char f = timer0_fract;
+ 50c:	30 91 04 02 	lds	r19, 0x0204	; 0x800204 <timer0_fract>
+
+ m += ((( (64 * 256) / ( 16000000L / 1000000L ) )) / 1000);
+ f += (((( (64 * 256) / ( 16000000L / 1000000L ) )) % 1000) >> 3);
+ 510:	23 e0       	ldi	r18, 0x03	; 3
+ if (f >= (1000 >> 3)) {
+ 512:	23 0f       	add	r18, r19
+ 514:	2d 37       	cpi	r18, 0x7D	; 125
+
+
+ unsigned long m = timer0_millis;
+ unsigned char f = timer0_fract;
+
+ m += ((( (64 * 256) / ( 16000000L / 1000000L ) )) / 1000);
+ 516:	58 f5       	brcc	.+86     	; 0x56e <__vector_23+0x88>
+ 518:	01 96       	adiw	r24, 0x01	; 1
+ 51a:	a1 1d       	adc	r26, r1
+ if (f >= (1000 >> 3)) {
+  f -= (1000 >> 3);
+  m += 1;
+ }
+
+ timer0_fract = f;
+ 51c:	b1 1d       	adc	r27, r1
+ 51e:	20 93 04 02 	sts	0x0204, r18	; 0x800204 <timer0_fract>
+ timer0_millis = m;
+ 522:	80 93 05 02 	sts	0x0205, r24	; 0x800205 <timer0_millis>
+ 526:	90 93 06 02 	sts	0x0206, r25	; 0x800206 <timer0_millis+0x1>
+ 52a:	a0 93 07 02 	sts	0x0207, r26	; 0x800207 <timer0_millis+0x2>
+ 52e:	b0 93 08 02 	sts	0x0208, r27	; 0x800208 <timer0_millis+0x3>
+ timer0_overflow_count++;
+ 532:	80 91 00 02 	lds	r24, 0x0200	; 0x800200 <_edata>
+ 536:	90 91 01 02 	lds	r25, 0x0201	; 0x800201 <_edata+0x1>
+ 53a:	a0 91 02 02 	lds	r26, 0x0202	; 0x800202 <_edata+0x2>
+ 53e:	b0 91 03 02 	lds	r27, 0x0203	; 0x800203 <_edata+0x3>
+ 542:	01 96       	adiw	r24, 0x01	; 1
+ 544:	a1 1d       	adc	r26, r1
+ 546:	b1 1d       	adc	r27, r1
+ 548:	80 93 00 02 	sts	0x0200, r24	; 0x800200 <_edata>
+ 54c:	90 93 01 02 	sts	0x0201, r25	; 0x800201 <_edata+0x1>
+ 550:	a0 93 02 02 	sts	0x0202, r26	; 0x800202 <_edata+0x2>
+ 554:	b0 93 03 02 	sts	0x0203, r27	; 0x800203 <_edata+0x3>
+}
+ 558:	bf 91       	pop	r27
+ 55a:	af 91       	pop	r26
+ 55c:	9f 91       	pop	r25
+ 55e:	8f 91       	pop	r24
+ 560:	3f 91       	pop	r19
+ 562:	2f 91       	pop	r18
+ 564:	0f 90       	pop	r0
+ 566:	0f be       	out	0x3f, r0	; 63
+ 568:	0f 90       	pop	r0
+ 56a:	1f 90       	pop	r1
+ unsigned char f = timer0_fract;
+
+ m += ((( (64 * 256) / ( 16000000L / 1000000L ) )) / 1000);
+ f += (((( (64 * 256) / ( 16000000L / 1000000L ) )) % 1000) >> 3);
+ if (f >= (1000 >> 3)) {
+  f -= (1000 >> 3);
+ 56c:	18 95       	reti
+ 56e:	26 e8       	ldi	r18, 0x86	; 134
+  m += 1;
+ 570:	23 0f       	add	r18, r19
+ 572:	02 96       	adiw	r24, 0x02	; 2
+ 574:	a1 1d       	adc	r26, r1
+ 576:	b1 1d       	adc	r27, r1
+ 578:	d2 cf       	rjmp	.-92     	; 0x51e <__vector_23+0x38>
+
+0000057a <main>:
+void init()
+{
+
+
+ 
+__asm__ __volatile__ ("sei" ::: "memory")
+ 57a:	78 94       	sei
+
+
+
+ (
+(*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)((0x24) + 0x20)))))) 
+|= 
+ 57c:	84 b5       	in	r24, 0x24	; 36
+ 57e:	82 60       	ori	r24, 0x02	; 2
+ 580:	84 bd       	out	0x24, r24	; 36
+(1 << (1))
+);
+ (
+(*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)((0x24) + 0x20)))))) 
+|= 
+ 582:	84 b5       	in	r24, 0x24	; 36
+ 584:	81 60       	ori	r24, 0x01	; 1
+ 586:	84 bd       	out	0x24, r24	; 36
+(1 << (0))
+);
+ (
+(*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)((0x25) + 0x20)))))) 
+|= 
+ 588:	85 b5       	in	r24, 0x25	; 37
+ 58a:	82 60       	ori	r24, 0x02	; 2
+ 58c:	85 bd       	out	0x25, r24	; 37
+(1 << (1))
+);
+ (
+(*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)((0x25) + 0x20)))))) 
+|= 
+ 58e:	85 b5       	in	r24, 0x25	; 37
+ 590:	81 60       	ori	r24, 0x01	; 1
+ 592:	85 bd       	out	0x25, r24	; 37
+(1 << (0))
+);
+ (
+(*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x6E)))))) 
+|= 
+ 594:	80 91 6e 00 	lds	r24, 0x006E	; 0x80006e <__TEXT_REGION_LENGTH__+0x70006e>
+ 598:	81 60       	ori	r24, 0x01	; 1
+ 59a:	80 93 6e 00 	sts	0x006E, r24	; 0x80006e <__TEXT_REGION_LENGTH__+0x70006e>
+(1 << (0))
+);
+ 
+(*(volatile uint8_t *)(0x81)) 
+       = 0;
+ 59e:	10 92 81 00 	sts	0x0081, r1	; 0x800081 <__TEXT_REGION_LENGTH__+0x700081>
+
+
+ (
+(*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x81)))))) 
+|= 
+ 5a2:	80 91 81 00 	lds	r24, 0x0081	; 0x800081 <__TEXT_REGION_LENGTH__+0x700081>
+ 5a6:	82 60       	ori	r24, 0x02	; 2
+ 5a8:	80 93 81 00 	sts	0x0081, r24	; 0x800081 <__TEXT_REGION_LENGTH__+0x700081>
+(1 << (1))
+);
+
+ (
+(*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x81)))))) 
+|= 
+ 5ac:	80 91 81 00 	lds	r24, 0x0081	; 0x800081 <__TEXT_REGION_LENGTH__+0x700081>
+ 5b0:	81 60       	ori	r24, 0x01	; 1
+ 5b2:	80 93 81 00 	sts	0x0081, r24	; 0x800081 <__TEXT_REGION_LENGTH__+0x700081>
+(1 << (0))
+);
+ (
+(*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x80)))))) 
+|= 
+ 5b6:	80 91 80 00 	lds	r24, 0x0080	; 0x800080 <__TEXT_REGION_LENGTH__+0x700080>
+ 5ba:	81 60       	ori	r24, 0x01	; 1
+ 5bc:	80 93 80 00 	sts	0x0080, r24	; 0x800080 <__TEXT_REGION_LENGTH__+0x700080>
+
+
+
+ (
+(*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0xB1)))))) 
+|= 
+ 5c0:	80 91 b1 00 	lds	r24, 0x00B1	; 0x8000b1 <__TEXT_REGION_LENGTH__+0x7000b1>
+ 5c4:	84 60       	ori	r24, 0x04	; 4
+ 5c6:	80 93 b1 00 	sts	0x00B1, r24	; 0x8000b1 <__TEXT_REGION_LENGTH__+0x7000b1>
+(1 << (2))
+);
+ (
+(*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0xB0)))))) 
+|= 
+ 5ca:	80 91 b0 00 	lds	r24, 0x00B0	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7000b0>
+ 5ce:	81 60       	ori	r24, 0x01	; 1
+ 5d0:	80 93 b0 00 	sts	0x00B0, r24	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7000b0>
+
+
+
+ (
+(*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x91)))))) 
+|= 
+ 5d4:	80 91 91 00 	lds	r24, 0x0091	; 0x800091 <__TEXT_REGION_LENGTH__+0x700091>
+ 5d8:	82 60       	ori	r24, 0x02	; 2
+ 5da:	80 93 91 00 	sts	0x0091, r24	; 0x800091 <__TEXT_REGION_LENGTH__+0x700091>
+(1 << (1))
+);
+ (
+(*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x91)))))) 
+|= 
+ 5de:	80 91 91 00 	lds	r24, 0x0091	; 0x800091 <__TEXT_REGION_LENGTH__+0x700091>
+ 5e2:	81 60       	ori	r24, 0x01	; 1
+ 5e4:	80 93 91 00 	sts	0x0091, r24	; 0x800091 <__TEXT_REGION_LENGTH__+0x700091>
+(1 << (0))
+);
+ (
+(*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x90)))))) 
+|= 
+ 5e8:	80 91 90 00 	lds	r24, 0x0090	; 0x800090 <__TEXT_REGION_LENGTH__+0x700090>
+ 5ec:	81 60       	ori	r24, 0x01	; 1
+ 5ee:	80 93 90 00 	sts	0x0090, r24	; 0x800090 <__TEXT_REGION_LENGTH__+0x700090>
+(1 << (0))
+);
+ (
+(*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0xA1)))))) 
+|= 
+ 5f2:	80 91 a1 00 	lds	r24, 0x00A1	; 0x8000a1 <__TEXT_REGION_LENGTH__+0x7000a1>
+ 5f6:	82 60       	ori	r24, 0x02	; 2
+ 5f8:	80 93 a1 00 	sts	0x00A1, r24	; 0x8000a1 <__TEXT_REGION_LENGTH__+0x7000a1>
+(1 << (1))
+);
+ (
+(*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0xA1)))))) 
+|= 
+ 5fc:	80 91 a1 00 	lds	r24, 0x00A1	; 0x8000a1 <__TEXT_REGION_LENGTH__+0x7000a1>
+ 600:	81 60       	ori	r24, 0x01	; 1
+ 602:	80 93 a1 00 	sts	0x00A1, r24	; 0x8000a1 <__TEXT_REGION_LENGTH__+0x7000a1>
+(1 << (0))
+);
+ (
+(*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0xA0)))))) 
+|= 
+ 606:	80 91 a0 00 	lds	r24, 0x00A0	; 0x8000a0 <__TEXT_REGION_LENGTH__+0x7000a0>
+ 60a:	81 60       	ori	r24, 0x01	; 1
+ 60c:	80 93 a0 00 	sts	0x00A0, r24	; 0x8000a0 <__TEXT_REGION_LENGTH__+0x7000a0>
+
+
+
+ (
+(*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x121)))))) 
+|= 
+ 610:	80 91 21 01 	lds	r24, 0x0121	; 0x800121 <__TEXT_REGION_LENGTH__+0x700121>
+ 614:	82 60       	ori	r24, 0x02	; 2
+ 616:	80 93 21 01 	sts	0x0121, r24	; 0x800121 <__TEXT_REGION_LENGTH__+0x700121>
+(1 << (1))
+);
+ (
+(*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x121)))))) 
+|= 
+ 61a:	80 91 21 01 	lds	r24, 0x0121	; 0x800121 <__TEXT_REGION_LENGTH__+0x700121>
+ 61e:	81 60       	ori	r24, 0x01	; 1
+ 620:	80 93 21 01 	sts	0x0121, r24	; 0x800121 <__TEXT_REGION_LENGTH__+0x700121>
+(1 << (0))
+);
+ (
+(*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x120)))))) 
+|= 
+ 624:	80 91 20 01 	lds	r24, 0x0120	; 0x800120 <__TEXT_REGION_LENGTH__+0x700120>
+ 628:	81 60       	ori	r24, 0x01	; 1
+ 62a:	80 93 20 01 	sts	0x0120, r24	; 0x800120 <__TEXT_REGION_LENGTH__+0x700120>
+
+
+
+  (
+ (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x7A)))))) 
+ |= 
+ 62e:	80 91 7a 00 	lds	r24, 0x007A	; 0x80007a <__TEXT_REGION_LENGTH__+0x70007a>
+ 632:	84 60       	ori	r24, 0x04	; 4
+ 634:	80 93 7a 00 	sts	0x007A, r24	; 0x80007a <__TEXT_REGION_LENGTH__+0x70007a>
+ (1 << (2))
+ );
+  (
+ (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x7A)))))) 
+ |= 
+ 638:	80 91 7a 00 	lds	r24, 0x007A	; 0x80007a <__TEXT_REGION_LENGTH__+0x70007a>
+ 63c:	82 60       	ori	r24, 0x02	; 2
+ 63e:	80 93 7a 00 	sts	0x007A, r24	; 0x80007a <__TEXT_REGION_LENGTH__+0x70007a>
+ (1 << (1))
+ );
+  (
+ (*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x7A)))))) 
+ |= 
+ 642:	80 91 7a 00 	lds	r24, 0x007A	; 0x80007a <__TEXT_REGION_LENGTH__+0x70007a>
+ 646:	81 60       	ori	r24, 0x01	; 1
+ 648:	80 93 7a 00 	sts	0x007A, r24	; 0x80007a <__TEXT_REGION_LENGTH__+0x70007a>
+ (1 << (0))
+ );
+ (
+(*(volatile uint8_t *)(((uint16_t) &((*(volatile uint8_t *)(0x7A)))))) 
+|= 
+ 64c:	80 91 7a 00 	lds	r24, 0x007A	; 0x80007a <__TEXT_REGION_LENGTH__+0x70007a>
+ 650:	80 68       	ori	r24, 0x80	; 128
+ 652:	80 93 7a 00 	sts	0x007A, r24	; 0x80007a <__TEXT_REGION_LENGTH__+0x70007a>
+(1 << (7))
+);
+ 
+(*(volatile uint8_t *)(0XC1)) 
+       = 0;
+ 656:	10 92 c1 00 	sts	0x00C1, r1	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7000c1>
+
+
+
+
+
+ pinMode(pin, 0x1);
+ 65a:	86 e0       	ldi	r24, 0x06	; 6
+ 65c:	d9 dd       	rcall	.-1102   	; 0x210 <pinMode.constprop.0>
+ 65e:	64 e6       	ldi	r22, 0x64	; 100
+ 660:	70 e0       	ldi	r23, 0x00	; 0
+ 662:	86 e0       	ldi	r24, 0x06	; 6
+ 664:	7f de       	rcall	.-770    	; 0x364 <analogWrite.part.0>
+ 666:	85 e0       	ldi	r24, 0x05	; 5
+ 668:	d3 dd       	rcall	.-1114   	; 0x210 <pinMode.constprop.0>
+ 66a:	68 ec       	ldi	r22, 0xC8	; 200
+ 66c:	70 e0       	ldi	r23, 0x00	; 0
+ 66e:	85 e0       	ldi	r24, 0x05	; 5
+ 670:	79 de       	rcall	.-782    	; 0x364 <analogWrite.part.0>
+
+ setup();
+
+ for (;;) {
+  loop();
+  if (serialEventRun) serialEventRun();
+ 672:	c0 e0       	ldi	r28, 0x00	; 0
+ 674:	d0 e0       	ldi	r29, 0x00	; 0
+ 676:	20 97       	sbiw	r28, 0x00	; 0
+ 678:	f1 f3       	breq	.-4      	; 0x676 <main+0xfc>
+ 67a:	0e 94 00 00 	call	0	; 0x0 <__vectors>
+ 67e:	fb cf       	rjmp	.-10     	; 0x676 <main+0xfc>
+
+00000680 <__tablejump2__>:
+ 680:	ee 0f       	add	r30, r30
+ 682:	ff 1f       	adc	r31, r31
+ 684:	88 1f       	adc	r24, r24
+ 686:	8b bf       	out	0x3b, r24	; 59
+ 688:	07 90       	elpm	r0, Z+
+ 68a:	f6 91       	elpm	r31, Z
+ 68c:	e0 2d       	mov	r30, r0
+ 68e:	19 94       	eijmp
+
+00000690 <_exit>:
+ 690:	f8 94       	cli
+
+00000692 <__stop_program>:
+ 692:	ff cf       	rjmp	.-2      	; 0x692 <__stop_program>
