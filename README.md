@@ -2,7 +2,8 @@
 Tiny Arduino (and related) hacks not worth of their own repository.
 
 Posibly useful, but not too well documented.
----
+
+----------------------------------------------------
 
 ## ArduinoEEPROM
 A sketch that implements stk500v1 for self-updating EEPROM of an ATmega chip.  Based on ArduinoISP, but writes to the chip's own EEPROM instead of an external SPI-connected device.
