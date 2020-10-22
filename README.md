@@ -49,3 +49,7 @@ Implments some macros that make it easier to initialize extra SERCOM peripherals
 ## test_trng
 Demo sketch that initializes and uses the TRNG (True Random Number Generator) peripheral present on the SAMD51.
 
+
+## SAMD_Explorer
+ Allows the examination of the internal state of a SAMD chip.  In theory, this should be a library; it has a non-blocking CLI interface that could be called from a normal user sketch.  Not yet, though.
+ 
