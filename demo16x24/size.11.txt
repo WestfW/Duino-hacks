@@ -1,0 +1,12 @@
+   text	   data	    bss	    dec	    hex	filename
+    420	      0	      1	    421	    1a5	HardwareSerial.cpp.o
+    276	      0	      4	    280	    118	WInterrupts.c.o
+    258	      0	      0	    258	    102	WMath.cpp.o
+   2793	      0	     96	   2889	    b49	demo16x24.cpp.o
+     75	      0	      0	     75	     4b	pins_arduino.c.o
+    348	      0	      0	    348	    15c	wiring.c.o
+    234	      1	      0	    235	     eb	wiring_analog.c.o
+    356	      0	      0	    356	    164	wiring_digital.c.o
+    190	      0	      0	    190	     be	wiring_pulse.c.o
+    792	      0	      4	    796	    31c	wiring_serial.c.o
+    120	      0	      0	    120	     78	wiring_shift.c.o
