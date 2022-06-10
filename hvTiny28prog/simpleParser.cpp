@@ -268,6 +268,10 @@ uint8_t parserCore::hexton (uint8_t h)
 
 #define error(a) S->print(a)
 
+/*
+ * parse a line worth of Intel hex format
+ * returns byte count on successs, -1 if error.
+ */
 int parserCore::tryihex(int16_t *iaddr, uint8_t *bytes)
 {
   uint16_t addr = 0;
@@ -278,16 +282,15 @@ int parserCore::tryihex(int16_t *iaddr, uint8_t *bytes)
       return -1;
   parsePtr++;
 
-  len = hexton(buffer[parsePtr++]);
+  len = hexton(buffer[parsePtr++]);  /* Length */
   len = (len << 4) + hexton(buffer[parsePtr++]);
   cksum = len;
 
-  b = hexton(buffer[parsePtr++]); /* record 
-                                     type */
+  b = hexton(buffer[parsePtr++]); /* address */
   b = (b << 4) + hexton(buffer[parsePtr++]);
   cksum += b;
   addr = b;
-  b = hexton(buffer[parsePtr++]); /* record type */
+  b = hexton(buffer[parsePtr++]); /* address 2nd byte */
   b = (b << 4) + hexton(buffer[parsePtr++]);
   cksum += b;
   addr = (addr << 8) + b;
@@ -297,7 +300,7 @@ int parserCore::tryihex(int16_t *iaddr, uint8_t *bytes)
   b = (b << 4) + hexton(buffer[parsePtr++]);
   cksum += b;
 
-  for (uint8_t i = 0; i < len; i++) {
+  for (uint8_t i = 0; i < len; i++) {  /* <len> bytes of data */
       b = hexton(buffer[parsePtr++]);
       b = (b << 4) + hexton(buffer[parsePtr++]);
       *bytes++ = b;
@@ -310,6 +313,7 @@ int parserCore::tryihex(int16_t *iaddr, uint8_t *bytes)
       error("Bad checksum: ");
       Serial.print(cksum, HEX);
   }
+  /* line terminator */
   if ((buffer[parsePtr++] == '\n') ||
       (buffer[parsePtr++] == '\r') ||
       (buffer[parsePtr++] == 0)) {

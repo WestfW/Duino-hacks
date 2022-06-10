@@ -3,7 +3,7 @@
   ATmega4809-hosted High Voltage Parallel Programmer for ATtiny28
   by Bill Westfield, 2020.
 
-  Based somewhat on code from:
+  Based somewhat on (BSD Licensed) code from:
   [https://github.com/dilshan/avr-hv2]
   Copyright (c) 2020 Dilshan R Jayakody [jayakody2000lk at gmail dot com]
 
