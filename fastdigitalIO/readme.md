@@ -16,6 +16,7 @@
 - the compiler includes the ability to detect when a value is a compile-time constant.
 ### Compiler Optimizations, "inline"
 - Even array lookups (with  constant indices) can optimize to loading a constant.
+- the role of Link Time Optimization
 
 ### Fast Buses or address spaces
 ### Bit-processing peripherals
@@ -23,9 +24,14 @@
 ## Architecture Specific comments
 ### AVR
 - SBI/CBI instructions
+- But what about PGMSPACE?
+- Classic Mega vs Mega0/xTiny/AVR-xx
+- VPORT
 ### ARM
 - lacks special IO instructions; everything is a memory access.
 - Peripheral buses can take several cycles to access.
+- Barrel shifter
+- Port size
 ### ARM Cortex M0
 - IOBus - fast single-cycle access
 ### ARM Cortex M3/M4
