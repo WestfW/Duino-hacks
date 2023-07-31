@@ -35,3 +35,10 @@
 ### ARM Cortex M0
 - IOBus - fast single-cycle access
 ### ARM Cortex M3/M4
+## Comments on Testing
+It turns out that a loop containing digitalWriteFast() calls to toggle a pin is not a very good test of the speed of the function itself.
+Once you use inline functions (or link-time optimization), the compiler is free to optimize the code in ways that obscure what al is being done.
+For example, on most ARMs, all the loading of addresses and constants into registers will likely be moved outside of the loop itself.
+That leaves you with a very fast loop containing only a couple of store instructions.  A nice fast waveform, but a poor measure of how well
+deriving and loading the necessary constants is being done.
+
