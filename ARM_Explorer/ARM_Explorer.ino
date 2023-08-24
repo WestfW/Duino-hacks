@@ -87,9 +87,9 @@ void backgroundMonitor() {
     }
 #endif
     static const char *cmd_strings =
-      PSTR("board ""bytes ""hwords "   "words " "pwm " "interrupts " "Serial "   "pins " "scb " "fpu "   "help "    "? ");
+      PSTR("board ""bytes ""hwords "   "words " "pwm " "interrupts " "Serial "   "pins " "scb " "fpu " "systick "   "help "    "? ");
     enum {
-      CMD_BOARD, CMD_BYTE, CMD_HWORD, CMD_WORD, CMD_PWM, CMD_INT,    CMD_SERCOM, CMD_PINS, CMD_SCB, CMD_FPU, CMD_HELP, CMD_HELP2  // make sure this matches the string
+      CMD_BOARD, CMD_BYTE, CMD_HWORD, CMD_WORD, CMD_PWM, CMD_INT,    CMD_SERCOM, CMD_PINS, CMD_SCB, CMD_FPU, CMD_SYSTICK, CMD_HELP, CMD_HELP2  // make sure this matches the string
     };
 
     cmd = ttycli.keyword(cmd_strings); // look for a command.
@@ -123,23 +123,31 @@ void backgroundMonitor() {
         print_fpu();
         break;
 
+      case CMD_SYSTICK:
+        print_systick();
+        break;
+
       case CMD_INT:
         {
+          int nInts;
+#ifdef SCnSCB //v7m has data about interrupts
           sprintf(spbuffer, "  SCnSCB->ICTR= %08lx (%s)",
                   SCnSCB->ICTR, "Interrupt Controller info");
           mySerial.print(spbuffer);
           int field = ((SCnSCB->ICTR & SCnSCB_ICTR_INTLINESNUM_Msk) >> SCnSCB_ICTR_INTLINESNUM_Pos);
-          int nInts = (field+1)*32;
+          nInts = (field + 1) * 32;
           sprintf(spbuffer, " (%ld extern Interrputs)\n", nInts);
           mySerial.print(spbuffer);
           sprintf(spbuffer, "  SCnSCB->ACTLR= %08lx (%s)\n", SCnSCB->ACTLR, "Auxiliary Control info");
           mySerial.print(spbuffer);
-
+#else //v6m has 32 external interrupts.
+          nInts = 32;
+#endif
           uint32_t *vecs = (uint32_t *)(SCB->VTOR);
           sprintf(spbuffer, "\nException Table (@0x%lx)\n---------------\n", (uint32_t) vecs);
           mySerial.print(spbuffer);
           for (int i = 0; i < 16; i++) {
-          uint32_t thisVec = vecs[i] & ~1;
+            uint32_t thisVec = vecs[i] & ~1;
             if (thisVec != 0) {
               Serial.print(vecnames[i]);
               Serial.print(" = 0x");
@@ -151,7 +159,7 @@ void backgroundMonitor() {
             }
           }
           for (int i = 0; i < nInts; i++) {
-          uint32_t thisVec = vecs[i + 16] & ~1;
+            uint32_t thisVec = vecs[i + 16] & ~1;
             if (thisVec != 0) {
               Serial.print("Vector ");
               Serial.print(i);
@@ -204,21 +212,23 @@ void backgroundMonitor() {
           uint8_t *p;
           n = ttycli.number();
           p = (uint8_t *) n;
-          sprintf(spbuffer, "\n0x % 08lx : ", (uint32_t)n);
-          Serial.print(spbuffer);
           if (n >= 0) {
-            for (int i = 0; i < 32; i++) {
-              sprintf(spbuffer, " % 02x ", p[i]);
+            n = ttycli.number();
+            if (n < 0) {
+              n = 1;
+            }
+          } else break;
+
+          while (n > 0) {
+            sprintf(spbuffer, "0x%08lx : ", (uint32_t)p);
+            Serial.print(spbuffer);
+            for (int i = 0; i < 16; i++) {
+              sprintf(spbuffer, " %02x", p[i]);
               Serial.print(spbuffer);
             }
-            Serial.print("  ");
-            for (int i = 0; i < 32; i++) {
-              if (p[i] < 32)
-                Serial.print(".");
-              else
-                Serial.write(p[i]);
-            }
             Serial.println();
+            n -= 16;
+            p += 16;
           }
         }
         break;
@@ -228,14 +238,23 @@ void backgroundMonitor() {
           uint16_t *p;
           n = ttycli.number();
           p = (uint16_t *) n;
-          sprintf(spbuffer, "\n0x % 08lx : ", (uint32_t)n);
-          Serial.print(spbuffer);
           if (n >= 0) {
+            n = ttycli.number();
+            if (n < 0) {
+              n = 1;
+            }
+          } else break;
+
+          while (n > 0) {
+            sprintf(spbuffer, "0x%08lx : ", (uint32_t)p);
+            Serial.print(spbuffer);
             for (int i = 0; i < 16; i++) {
-              sprintf(spbuffer, " % 04x ", p[i]);
+              sprintf(spbuffer, " %04lx", p[i]);
               Serial.print(spbuffer);
             }
             Serial.println();
+            n -= 16;
+            p += 16;
           }
         }
         break;
@@ -245,14 +264,23 @@ void backgroundMonitor() {
           uint32_t *p;
           n = ttycli.number();
           p = (uint32_t *) n;
-          sprintf(spbuffer, "\n0x % 08lx : ", (uint32_t)n);
-          Serial.print(spbuffer);
           if (n >= 0) {
+            n = ttycli.number();
+            if (n < 0) {
+              n = 1;
+            }
+          } else break;
+
+          while (n > 0) {
+            sprintf(spbuffer, "0x%08lx : ", (uint32_t)p);
+            Serial.print(spbuffer);
             for (int i = 0; i < 8; i++) {
-              sprintf(spbuffer, " % 08lx ", p[i]);
+              sprintf(spbuffer, " %08lx", p[i]);
               Serial.print(spbuffer);
             }
             Serial.println();
+            n -= 8;
+            p += 8;
           }
         }
         break;
@@ -278,63 +306,80 @@ void print_scb() {
   mySerial.print("SCB (System Control Block @0x"); mySerial.println((uint32_t)SCB, HEX);
   sprintf(spbuffer, "%6s=0x%08lx%s", "CPUID", p->CPUID, " CPUID Base Register \n");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "%6s=0x%08lx%s", "ICSR", p->ICSR, " Interrupt Control and State Register \n");
+  sprintf(spbuffer, "%6s=0x%08lx%s", "ICSR", p->ICSR, " Interrupt Control and State  \n");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "%6s=0x%08lx%s", "VTOR", p->VTOR, " Vector Table Offset Register \n");
+  sprintf(spbuffer, "%6s=0x%08lx%s", "VTOR", p->VTOR, " Vector Table Offset  \n");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "%6s=0x%08lx%s", "AIRCR", p->AIRCR, " Application Interrupt and Reset Control Register \n");
+  sprintf(spbuffer, "%6s=0x%08lx%s", "AIRCR", p->AIRCR, " Application Interrupt and Reset Control  \n");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "%6s=0x%08lx%s", "SCR", p->SCR, " System Control Register \n");
+  sprintf(spbuffer, "%6s=0x%08lx%s", "SCR", p->SCR, " System Control  \n");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "%6s=0x%08lx%s", "CCR", p->CCR, " Configuration Control Register \n");
+  sprintf(spbuffer, "%6s=0x%08lx%s", "CCR", p->CCR, " Configuration Control  \n");
   mySerial.print(spbuffer);
   sprintf(spbuffer, "%6s=0x%08lx%s",  "SHP", p->SHP[0], " System Handlers Priority Registers (4-7, 8-11, 12-15) \n");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "%6s=0x%08lx%s", "SHCSR", p->SHCSR, " System Handler Control and State Register \n");
+  sprintf(spbuffer, "%6s=0x%08lx%s", "SHCSR", p->SHCSR, " System Handler Control and State  \n");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "%6s=0x%08lx%s", "CFSR", p->CFSR, " Configurable Fault Status Register \n");
+  sprintf(spbuffer, "%6s=0x%08lx%s", "CFSR", p->CFSR, " Configurable Fault Status  \n");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "%6s=0x%08lx%s", "HFSR", p->HFSR, " HardFault Status Register \n");
+  sprintf(spbuffer, "%6s=0x%08lx%s", "HFSR", p->HFSR, " HardFault Status  \n");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "%6s=0x%08lx%s", "DFSR", p->DFSR, " Debug Fault Status Register \n");
+  sprintf(spbuffer, "%6s=0x%08lx%s", "DFSR", p->DFSR, " Debug Fault Status  \n");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "%6s=0x%08lx%s", "MMFAR", p->MMFAR, " MemManage Fault Address Register \n");
+  sprintf(spbuffer, "%6s=0x%08lx%s", "MMFAR", p->MMFAR, " MemManage Fault Address  \n");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "%6s=0x%08lx%s", "BFAR", p->BFAR, " BusFault Address Register \n");
+  sprintf(spbuffer, "%6s=0x%08lx%s", "BFAR", p->BFAR, " BusFault Address  \n");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "%6s=0x%08lx%s", "AFSR", p->AFSR, " Auxiliary Fault Status Register \n");
+  sprintf(spbuffer, "%6s=0x%08lx%s", "AFSR", p->AFSR, " Auxiliary Fault Status  \n");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "%6s=0x%08lx%s", "PFR", p->PFR[0], " Processor Feature Register \n");
+  sprintf(spbuffer, "%6s=0x%08lx%s", "PFR", p->PFR[0], " Processor Feature  \n");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "%6s=0x%08lx%s", "DFR", p->DFR, " Debug Feature Register \n");
+  sprintf(spbuffer, "%6s=0x%08lx%s", "DFR", p->DFR, " Debug Feature  \n");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "%6s=0x%08lx%s", "ADR", p->ADR, " Auxiliary Feature Register \n");
+  sprintf(spbuffer, "%6s=0x%08lx%s", "ADR", p->ADR, " Auxiliary Feature  \n");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "%6s=0x%08lx%s", "MMFR", p->MMFR[0], " Memory Model Feature Register \n");
+  sprintf(spbuffer, "%6s=0x%08lx%s", "MMFR", p->MMFR[0], " Memory Model Feature  \n");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "%6s=0x%08lx%s", "ISAR", p->ISAR[0], " Instruction Set Attributes Register \n");
+  sprintf(spbuffer, "%6s=0x%08lx%s", "ISAR", p->ISAR[0], " Instruction Set Attributes  \n");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "%6s=0x%08lx%s", "CPACR", p->CPACR, " Coprocessor Access Control Register \n");
+  sprintf(spbuffer, "%6s=0x%08lx%s", "CPACR", p->CPACR, " Coprocessor Access Control  \n");
   mySerial.print(spbuffer);
 }
 
 void print_fpu() {
+#if !defined(FPU)
+  mySerial.println("No Floating Point is present.");
+#else
   FPU_Type *p = FPU;
   sprintf(spbuffer, "FPU (Float Processing Unit info @%08lx)\n", (uint32_t)FPU);
   mySerial.print(spbuffer);
 
-  sprintf(spbuffer, "  %6s=0x%08lx%s\n", "FPCCR", p->FPCCR, " FP Context Control Register");
+  sprintf(spbuffer, "  %6s=0x%08lx%s\n", "FPCCR", p->FPCCR, " FP Context Control ");
   if (p->FPCCR & FPU_FPCCR_LSPACT_Msk) {
     mySerial.print("    (Lazy State Preservation is ON)\n");
   }
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "  %6s=0x%08lx%s\n", "FPCAR", p->FPCAR, " FP Context Address Register");
+  sprintf(spbuffer, "  %6s=0x%08lx%s\n", "FPCAR", p->FPCAR, " FP Context Address ");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "  %6s=0x%08lx%s\n", "FPDSCR", p->FPDSCR, " FP Default Status Control Register");
+  sprintf(spbuffer, "  %6s=0x%08lx%s\n", "FPDSCR", p->FPDSCR, " FP Default Status Control ");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "  %6s=0x%08lx%s\n", "MVFR0", p->MVFR0, " Media and FP Feature Register 0");
+  sprintf(spbuffer, "  %6s=0x%08lx%s\n", "MVFR0", p->MVFR0, " Media and FP Feature  0");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "  %6s=0x%08lx%s\n", "MVFR1", p->MVFR1, " Media and FP Feature Register 1");
+  sprintf(spbuffer, "  %6s=0x%08lx%s\n", "MVFR1", p->MVFR1, " Media and FP Feature  1");
+  mySerial.print(spbuffer);
+#endif
+}
+
+void print_systick() {
+  SysTick_Type *p = SysTick;
+  Serial.println("SysTick Registers");
+  sprintf(spbuffer, "%6s=0x%08lx%s\n", "CTRL", p-> CTRL, " Control and Status ");
+  mySerial.print(spbuffer);
+  sprintf(spbuffer, "%6s=%8ld%s\n", "LOAD", p-> LOAD, " Reload Value ");
+  mySerial.print(spbuffer);
+  sprintf(spbuffer, "%6s=%8ld%s\n", "VAL", p-> VAL, " Current Value ");
+  mySerial.print(spbuffer);
+  sprintf(spbuffer, "%6s=0x%08lx%s\n", "CALIB", p-> CALIB, " Calibration ");
   mySerial.print(spbuffer);
 }
 
