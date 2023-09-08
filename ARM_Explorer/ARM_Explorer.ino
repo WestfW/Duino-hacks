@@ -12,6 +12,31 @@
 #define SHOWSYMS(a) do {sprintf(spbuffer, PSTR("Value of '" #a "' is '" a "'\n")); Serial.print(spbuffer); } while (0)
 #define mySerial Serial
 
+char uint32_t_f[] = "%6s= 0x%08lx (%s)";
+char uint32_t_fd[] = "%6s= 0x%8ld (%s)";
+char uint16_t_f[] = "%6s= 0x%04lx (%s)";
+char uint8_t_f[] =  "%6s=   0x%02lx (%s)";
+
+const uint8_t uint32_t_l = 4;
+const uint8_t uint16_t_l = 2;
+const uint8_t uint8_t_l = 1;
+
+typedef struct structDesc_ {
+  uint16_t offset;
+  uint8_t length;
+  const char *format;
+  const char *fname;
+  const char *fdescription;
+} structDesc;
+
+const structDesc systick_struct_desc[] = {
+  { offsetof(SysTick_Type, CTRL), uint32_t_l, uint32_t_f, "CTRL", "Control and Status"},
+  { offsetof(SysTick_Type, LOAD), uint32_t_l, uint32_t_fd, "LOAD", "Reload Value"},
+  { offsetof(SysTick_Type, VAL), uint32_t_l, uint32_t_fd, "VAL", "Current Val"},
+  { offsetof(SysTick_Type, CALIB), uint32_t_l, uint32_t_f, "CALIB", "Calibration"},
+  { 0, 0, 0, 0, 0 }
+};
+
 struct simreg {
   volatile uint8_t a, b, c, d;
 };
@@ -142,7 +167,7 @@ void backgroundMonitor() {
           mySerial.print(spbuffer);
           int field = ((SCnSCB->ICTR & SCnSCB_ICTR_INTLINESNUM_Msk) >> SCnSCB_ICTR_INTLINESNUM_Pos);
           nInts = (field + 1) * 32;
-          sprintf(spbuffer, " (%ld extern Interrputs)\n", nInts);
+          sprintf(spbuffer, " (%d extern Interrputs)\n", nInts);
           mySerial.print(spbuffer);
           sprintf(spbuffer, "  SCnSCB->ACTLR= %08lX (%s)\n", SCnSCB->ACTLR, "Auxiliary Control info");
           mySerial.print(spbuffer);
@@ -377,6 +402,8 @@ void print_fpu() {
 }
 
 void print_systick() {
+  Serial.println("\nVia sructDef");
+  print_struct((void*)SysTick, systick_struct_desc);
   SysTick_Type *p = SysTick;
   Serial.println("SysTick Registers");
   sprintf(spbuffer, "%6s=0x%08lX%s\n", "CTRL", p-> CTRL, " Control and Status ");
@@ -393,31 +420,64 @@ void print_mpu() {
 #if __MPU_PRESENT
   mySerial.println("Memory Protection Unit Registers");
   MPU_Type *p = MPU;
-  sprintf(spbuffer, "  %6s=%0x08lx (%s)", "TYPE", p->TYPE, "MPU Type");
+  sprintf(spbuffer, "  %6s=0x%08lx (%s)", "TYPE", p->TYPE, "MPU Type");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "  %6s=%0x08lx (%s)", "CTRL", p->CTRL, "MPU Control");
+  sprintf(spbuffer, "  %6s=0x%08lx (%s)", "CTRL", p->CTRL, "MPU Control");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "  %6s=%0x08lx (%s)", "RNR", p->RNR, "MPU Region RNRber");
+  sprintf(spbuffer, "  %6s=0x%08lx (%s)", "RNR", p->RNR, "MPU Region RNRber");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "  %6s=%0x08lx (%s)", "RBAR", p->RBAR, "MPU Region Base Address");
+  sprintf(spbuffer, "  %6s=0x%08lx (%s)", "RBAR", p->RBAR, "MPU Region Base Address");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "  %6s=%0x08lx (%s)", "RASR", p->RASR, "MPU Region Attribute and Size");
+  sprintf(spbuffer, "  %6s=0x%08lx (%s)", "RASR", p->RASR, "MPU Region Attribute and Size");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "  %6s=%0x08lx (%s)", "RBAR_A1", p->RBAR_A1, "MPU Alias 1 Region Base Address");
+  sprintf(spbuffer, "  %6s=0x%08lx (%s)", "RBAR_A1", p->RBAR_A1, "MPU Alias 1 Region Base Address");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "  %6s=%0x08lx (%s)", "RASR_A1", p->RASR_A1, "MPU Alias 1 Region Attribute and Size");
+  sprintf(spbuffer, "  %6s=0x%08lx (%s)", "RASR_A1", p->RASR_A1, "MPU Alias 1 Region Attribute and Size");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "  %6s=%0x08lx (%s)", "RBAR_A2", p->RBAR_A2, "MPU Alias 2 Region Base Address");
+  sprintf(spbuffer, "  %6s=0x%08lx (%s)", "RBAR_A2", p->RBAR_A2, "MPU Alias 2 Region Base Address");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "  %6s=%0x08lx (%s)", "RASR_A2", p->RASR_A2, "MPU Alias 2 Region Attribute and Size");
+  sprintf(spbuffer, "  %6s=0x%08lx (%s)", "RASR_A2", p->RASR_A2, "MPU Alias 2 Region Attribute and Size");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "  %6s=%0x08lx (%s)", "RBAR_A3", p->RBAR_A3, "MPU Alias 3 Region Base Address");
+  sprintf(spbuffer, "  %6s=0x%08lx (%s)", "RBAR_A3", p->RBAR_A3, "MPU Alias 3 Region Base Address");
   mySerial.print(spbuffer);
-  sprintf(spbuffer, "  %6s=%0x08lx (%s)", "RASR_A3", p->RASR_A3, "MPU Alias 3 Region Attribute and Size");
+  sprintf(spbuffer, "  %6s=0x%08lx (%s)", "RASR_A3", p->RASR_A3, "MPU Alias 3 Region Attribute and Size");
   mySerial.print(spbuffer);
 #else
   mySerial.println("No MPU present");
 #endif
+}
+
+void print_struct(void *structp, const structDesc *sdlist) {
+  uint32_t val;
+  const structDesc *sd;
+  #if DEBUGCODE
+  sd = sdlist;
+  while (sd->length > 0) {
+    sprintf(spbuffer, "p=%x, Offset: %x, Length: %x, name: %s", (uint32_t)structp, sd->offset, sd->length, sd->fname);
+    Serial.println(spbuffer);
+    sd++;
+  }
+  #endif
+  while (1) {
+    sd = sdlist++;
+    if (sd->length == 0)
+      break;
+    switch (sd->length) {
+      case 1:
+        val = *((uint8_t *)structp) + sd->offset;
+        break;
+      case 2:
+        val = *(uint16_t *)((uint8_t *)structp + sd->offset);
+        break;
+      case 4:
+      default:
+        val = *(uint32_t *)((uint8_t *)structp + sd->offset);
+//        Serial.println((uint32_t)((uint8_t *)structp + sd->offset), HEX);
+        break;
+    }
+    sprintf(spbuffer, sd->format, sd->fname, val, sd->fdescription);
+    mySerial.println(spbuffer);
+  }
 }
 /* EMACS Keyboard macro to help turn .h files into descriptive printfs.
   ;; Keyboard Macro Editor.  Press C-c C-c to finish; press C-x k RET to cancel.
@@ -428,14 +488,14 @@ void print_mpu() {
 
   Macro:
 
-  ESC d      ;; kill-word
+  ESC d      ;; kill-word -get rid of "__IOM uint32_t"
   ESC d     ;; kill-word
   ESC d     ;; kill-word
   sprintf     ;; self-insert-command * 7
   (     ;; c-electric-paren
   spbuffer    ;; self-insert-command * 8
   ,     ;; c-electric-semi&comma
-  "%6s=%0x08lx    ;; self-insert-command * 12
+  "%6s=0x%08lx    ;; self-insert-command "sprintf(spbuf, "%6s=0x%08lx%s","
   SPC     ;; self-insert-command
   (     ;; c-electric-paren
   %s      ;; self-insert-command * 2
@@ -444,30 +504,30 @@ void print_mpu() {
   ,     ;; c-electric-semi&comma
   "     ;; self-insert-command
   SPC     ;; self-insert-command
-  C-f     ;; forward-char
+  C-f     ;; forward-char  skip the spaces
   ESC \     ;; delete-horizontal-space
-  ESC C-s     ;; isearch-forward-regexp
-  ;     ;; c-electric-semi&comma
-  C-b     ;; backward-char
+  ESC C-s     ;; isearch-forward-regexp  copy structure member name
+  ;     ;; c-electric-semi&comma           into the kill buffer
+  C-b     ;; backward-char                    ...
   C-w     ;; kill-region
   C-d     ;; c-electric-delete-forward
-  C-y     ;; yank
+  C-y     ;; yank                   into the quoted string
   "     ;; self-insert-command
   ,     ;; c-electric-semi&comma
   SPC     ;; self-insert-command
   p->     ;; self-insert-command * 3
-  C-y     ;; yank
+  C-y     ;; yank                   and again as a variable p->member
   ,     ;; c-electric-semi&comma
   SPC     ;; self-insert-command
   "     ;; self-insert-command
-  M-\     ;; delete-horizontal-space
+  M-\     ;; delete-horizontal-space  and clean up the description from the comment
   C-e     ;; move-end-of-line
   "     ;; self-insert-command
   )     ;; c-electric-paren
   ;     ;; c-electric-semi&comma
   C-n     ;; next-line
   C-a     ;; move-beginning-of-line
-  mySerial.print    ;; self-insert-command * 14
+  mySerial.print    ;; self-insert-command * 14   and print the constructed string
   (     ;; c-electric-paren
   spbuffer    ;; self-insert-command * 8
   )     ;; c-electric-paren
