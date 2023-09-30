@@ -51,5 +51,12 @@ Demo sketch that initializes and uses the TRNG (True Random Number Generator) pe
 
 
 ## SAMD_Explorer
- Allows the examination of the internal state of a SAMD chip.  In theory, this should be a library; it has a non-blocking CLI interface that could be called from a normal user sketch.  Not yet, though.
+Allows the examination of the internal state of a SAMD chip.  In theory, this should be a library; it has a non-blocking CLI interface that could be called from a normal user sketch.  Not yet, though.
+
+## ARM_Explorer
+Allows the examination of the internal state of an ARM chip.  Like SAMD_Explorer, but mostly focused on generic ARM functionality for CM4 (currently Renesas R4A as used on "Uno Minima R4"
+
+## SingleNeo
+Function and demo for driving the single neopixel present on some newer boards, using samd21 or rp2040
+
  
