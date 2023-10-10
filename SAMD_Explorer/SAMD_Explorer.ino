@@ -109,7 +109,11 @@ void backgroundMonitor() {
       case CMD_INT:
         {
           uint32_t *vecs = (uint32_t *)(&exception_table);
-          Serial.println("\nException Table\n---------------");
+          if (__VTOR_PRESENT) {
+            vecs = (uint32_t *)SCB->VTOR;
+          }
+          Serial.print("\nException Table @0x");
+          Serial.println((uint32_t)vecs, HEX); Serial.println("---------------");
           for (int i = 0; i < 16; i++) {
             uint32_t thisVec = vecs[i] & ~1;
             if (thisVec != 0 && thisVec != (~1 & (uint32_t) &Dummy_Handler)) {
@@ -328,6 +332,7 @@ extern "C" long _write_r ( struct _reent *ptr, int fd, const void *buf, size_t c
     Serial.print("_write_r with fd=");
     Serial.println(fd);
   }
+  return 0;
 }
 
 const char *portNames[] = {"PortA", "PortB", "PortC", "PortD"};
